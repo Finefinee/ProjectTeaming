@@ -5,6 +5,5 @@ import lombok.Data;
 @Data
 public class InviteRequestDto {
 
-    private String projectManagerUsername;
     private String projectMemberUsername;
 }

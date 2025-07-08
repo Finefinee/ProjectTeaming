@@ -11,16 +11,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class InviteService implements Project.Teaming.Invite.Service.InviteService {
+public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteService {
 
     private final InviteRepository inviteRepository;
     private final MemberRepository memberRepository;
 
     @Override
     @Transactional
-    public void sendInvite(InviteRequestDto inviteRequestDto) {
+    public void sendInvite(String managerUsername, InviteRequestDto inviteRequestDto) {
         // 사람 찾기
-        Member projectManager = memberRepository.findByUsername(inviteRequestDto.getProjectManagerUsername())
+        Member projectManager = memberRepository.findByUsername(managerUsername)
                 .orElseThrow(() -> new RuntimeException("프로젝트 팀장 없음"));
         Member projectMember = memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
                 .orElseThrow(() -> new RuntimeException("프로젝트 멤버 (초대되는 사람) 없음"));
