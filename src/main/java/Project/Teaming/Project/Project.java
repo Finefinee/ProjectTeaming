@@ -1,7 +1,10 @@
 package Project.Teaming.Project;
 
+import Project.Teaming.Member.Member;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -18,5 +21,6 @@ public class Project {
     @Column(nullable = false)
     private String projectManager; // 본명
 
-    private String projectMember; // 배열
+    @ManyToMany
+    private List<Member> projectMember; // 배열
 }
