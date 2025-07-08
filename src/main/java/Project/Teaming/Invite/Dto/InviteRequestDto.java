@@ -1,9 +1,10 @@
 package Project.Teaming.Invite.Dto;
 
-import Project.Teaming.Member.Member;
+import lombok.Data;
 
+@Data
 public class InviteRequestDto {
 
-    private Member projectManager;
-    private Member projectMember;
+    private String projectManagerUsername;
+    private String projectMemberUsername;
 }
