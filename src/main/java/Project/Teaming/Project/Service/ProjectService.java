@@ -13,7 +13,7 @@ public class ProjectService {
 
     private final ProjectRepository projectRepository;
 
-    public ProjectResponse CreateProject(CreateProjectRequest request) {
+    public ProjectResponse createProject(CreateProjectRequest request) {
         Project project = Project.builder()
                 .title(request.title())
                 .content(request.content())
