@@ -1,10 +1,14 @@
-package Project.Teaming.Member;
+package Project.Teaming.Member.Entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
+@NoArgsConstructor
+@SuperBuilder
 public class Member {
 
     @Id
