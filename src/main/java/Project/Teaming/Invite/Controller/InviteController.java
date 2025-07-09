@@ -21,10 +21,10 @@ public class InviteController {
     @PostMapping
     public ResponseEntity<Void> sendInvite(@AuthenticationPrincipal UserDetails userDetails,
                                            @RequestBody InviteRequestDto inviteRequestDto)
-        {
-            inviteService.sendInvite(userDetails, inviteRequestDto);
-            return ResponseEntity.ok().build();
-        }
+    {
+        inviteService.sendInvite(userDetails, inviteRequestDto);
+        return ResponseEntity.ok().build();
+    }
 
     @PatchMapping("/accept")
     public ResponseEntity<Void> acceptInvite(@AuthenticationPrincipal UserDetails userDetails,
