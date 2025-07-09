@@ -39,6 +39,7 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
     }
 
     @Override
+    @Transactional
     public void acceptInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
         Invite invite = inviteRepository.findById(dto.getInviteId())
                 .orElseThrow(() -> new RuntimeException("초대가 존재하지 않습니다."));
