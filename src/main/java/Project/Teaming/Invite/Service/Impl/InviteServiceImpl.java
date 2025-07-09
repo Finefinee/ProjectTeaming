@@ -1,5 +1,6 @@
 package Project.Teaming.Invite.Service.Impl;
 
+import Project.Teaming.Invite.Dto.AcceptInviteRequestDto;
 import Project.Teaming.Invite.Dto.InviteRequestDto;
 import Project.Teaming.Invite.Entity.Invite;
 import Project.Teaming.Invite.Repository.InviteRepository;
@@ -34,6 +35,22 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
         invite.setAccepted(false);
 
         // 저장
+        inviteRepository.save(invite);
+    }
+
+    @Override
+    public void acceptInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
+        Invite invite = inviteRepository.findById(dto.getInviteId())
+                .orElseThrow(() -> new RuntimeException("초대가 존재하지 않습니다."));
+
+        // UserDetails에서 username 꺼내기
+        String username = userDetails.getUsername();
+
+        if (!invite.getProjectMember().getUsername().equals(username)) {
+            throw new RuntimeException("본인만 초대를 수락할 수 있습니다.");
+        }
+
+        invite.setAccepted(true);
         inviteRepository.save(invite);
     }
 }
