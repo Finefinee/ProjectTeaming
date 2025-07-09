@@ -6,6 +6,8 @@ import Project.Teaming.Invite.Repository.InviteRepository;
 import Project.Teaming.Member.Member;
 import Project.Teaming.Member.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,9 +20,9 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
 
     @Override
     @Transactional
-    public void sendInvite(String managerUsername, InviteRequestDto inviteRequestDto) {
+    public void sendInvite(@AuthenticationPrincipal UserDetails userDetails, InviteRequestDto inviteRequestDto) {
         // 사람 찾기
-        Member projectManager = memberRepository.findByUsername(managerUsername)
+        Member projectManager = memberRepository.findByUsername(userDetails.getUsername())
                 .orElseThrow(() -> new RuntimeException("프로젝트 팀장 없음"));
         Member projectMember = memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
                 .orElseThrow(() -> new RuntimeException("프로젝트 멤버 (초대되는 사람) 없음"));
