@@ -1,6 +1,8 @@
 package Project.Teaming.Project.Request;
 
 public record DeleteProjectRequest(
-        String title
+        Integer id,
+        String title,
+        String content
 ) {
 }
