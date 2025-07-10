@@ -22,10 +22,10 @@ public class ProjectController {
         projectService.createProject(request);
     }
 
-    @GetMapping("/{id}")
-    public ProjectResponse findProjectById(@PathVariable int id) {
-        return projectService.findProjectById(id);
-    }
+//    @GetMapping("/{id}")
+//    public ProjectResponse findProjectById(@PathVariable int id) {
+//        return projectService.findProjectById(id);
+//    }
 
     @DeleteMapping("/{id}")
     public void deleteProjectById(@PathVariable int id) {

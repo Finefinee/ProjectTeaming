@@ -39,45 +39,41 @@ public class ProjectService {
         );
     }
     public String deleteProject(DeleteProjectRequest request) {
-        Project project = projectRepository.findById(request.id()).orElse(null);
-
-        if (project == null) {
-            throw new IllegalArgumentException(request.id()+"project not found");
-        }
+        Project project = projectRepository.findById(request.id())
+                .orElseThrow(() -> new IllegalArgumentException(request.id()+"project not found"));;
         projectRepository.delete(project);
         return "Project deleted";
     }
+//
+//    public ProjectResponse findProjectById(int id) {
+//        Project project = projectRepository.findById(id)
+//                .orElseThrow(() -> new IllegalArgumentException(id+"project not found"));
+//    }
 
-    public ProjectResponse findProjectById(int id) {
-        Project e = projectRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException(id+"project not found"));
+    public void deleteProjectById(int id) {
+        Project e = projectRepository.findById(id).orElseThrow(() -> new IllegalArgumentException(id+"project not found"));
 //        if (e == null) {
 //            throw new IllegalArgumentException("Project not found");
 //        }
-        return ProjectResponse.of(e);
-    }
-
-    public void deleteProjectById(int id) {
-        Project e = projectRepository.findById(id).orElse(null);
-        if (e == null) {
-            throw new IllegalArgumentException("Project not found");
-        }
         projectRepository.delete(e);
     }
 
     public ProjectResponse updateProject(UpdateProject request) {
-        Project e = projectRepository.findById(request.id()).orElse(null);
-        if (e == null) {
-            throw new IllegalArgumentException("Project not found");
-        }
-        e.setId(request.id());
+        Project project = projectRepository.findById(request.id()).orElseThrow(() -> new IllegalArgumentException(request.id()+"project not found"));
+//        if (e == null) {
+//            throw new IllegalArgumentException("Project not found");
+//        }
+        project.setId(request.id());
 
-        projectRepository.save(e);
+        projectRepository.save(project);
 
-        return ProjectResponse.of(e);
+        return ProjectResponse.of(project);
     }
 
     public List<ProjectResponse> findAll() {
-        return projectRepository.findAll().stream().map(ProjectResponse::of).collect(Collectors.toList());
+        return projectRepository.findAll()
+                .stream()
+                .map(ProjectResponse::of)
+                .collect(Collectors.toList());
     }
 }
