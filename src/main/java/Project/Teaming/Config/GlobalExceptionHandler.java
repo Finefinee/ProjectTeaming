@@ -1,5 +1,7 @@
-package Project.Teaming.Invite.Exception;
+package Project.Teaming.Config;
 
+import Project.Teaming.Invite.Exception.InviteNotFoundException;
+import Project.Teaming.Invite.Exception.NotInviteOwnerException;
 import Project.Teaming.Member.Exception.MemberNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
