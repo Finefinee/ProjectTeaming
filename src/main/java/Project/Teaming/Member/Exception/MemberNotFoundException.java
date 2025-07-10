@@ -1,4 +1,4 @@
-package Project.Teaming.Member;
+package Project.Teaming.Member.Exception;
 
 public class MemberNotFoundException extends RuntimeException {
     public MemberNotFoundException(String message) {

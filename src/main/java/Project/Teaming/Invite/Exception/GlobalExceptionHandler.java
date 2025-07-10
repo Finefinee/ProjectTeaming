@@ -1,6 +1,6 @@
 package Project.Teaming.Invite.Exception;
 
-import Project.Teaming.Member.MemberNotFoundException;
+import Project.Teaming.Member.Exception.MemberNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

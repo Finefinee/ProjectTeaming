@@ -1,6 +1,6 @@
 package Project.Teaming.Invite.Entity;
 
-import Project.Teaming.Member.Member;
+import Project.Teaming.Member.Entity.Member;
 import jakarta.persistence.*;
 import lombok.Data;
 

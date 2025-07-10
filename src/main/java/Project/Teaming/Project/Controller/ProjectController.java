@@ -16,11 +16,31 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 
 public class ProjectController {
-
     private final ProjectService projectService;
 
     @PostMapping
     public void createProject(@RequestBody CreateProjectRequest request) {
         projectService.createProject(request);
     }
+
+    @GetMapping("/{id}")
+    public ProjectResponse findProjectById(@PathVariable long id) {
+        return ProjectService.findProjectById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProjectById(@PathVariable long id) {
+        ProjectService.deleteProjectById(id);
+    }
+
+    @PatchMapping()
+    public ProjectResponse updateProject (@RequestBody UpdateProject request) {
+        return projectService.updateProject(request);
+    }
+
+    @GetMapping()
+    public List<ProjectResponse> findAll() {
+        return projectService.findAll();
+    }
+
 }
