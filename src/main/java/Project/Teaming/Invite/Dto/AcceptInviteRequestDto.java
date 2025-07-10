@@ -7,3 +7,5 @@ public class AcceptInviteRequestDto {
 
     private Long inviteId;
 }
+
+// test commit
