@@ -9,13 +9,13 @@ public record ProjectResponse(
         String projectMember // 학번
 
 ) {
-    public static ProjectResponse of (Project project) {
-        return new ProjectResponse(
-                project.getTitle(),
-                project.getContent(),
-                project.getProjectManager(),
-                project.getProjectMember()
-        );
-    }
+//    public static ProjectResponse of (Project project) {
+//        return new Project.Teaming.Project.Response.ProjectResponse(
+//                project.getTitle(),
+//                project.getContent(),
+//                project.getProjectManager(),
+//                project.getProjectMember()
+//        );
+//    }
 
 }
