@@ -4,7 +4,6 @@ package Project.Teaming.Project.Controller;
 import Project.Teaming.Project.Request.CreateProjectRequest;
 import Project.Teaming.Project.Request.UpdateProject;
 import Project.Teaming.Project.Response.ProjectResponse;
-import Project.Teaming.Project.Service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
