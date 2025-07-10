@@ -8,4 +8,4 @@ public class AcceptInviteRequestDto {
     private Long inviteId;
 }
 
-// test commit
+// test committ
