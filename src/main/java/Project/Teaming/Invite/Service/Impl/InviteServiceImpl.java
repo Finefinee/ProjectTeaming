@@ -1,13 +1,20 @@
 package Project.Teaming.Invite.Service.Impl;
 
+import Project.Teaming.Invite.Dto.AcceptInviteRequestDto;
 import Project.Teaming.Invite.Dto.InviteRequestDto;
 import Project.Teaming.Invite.Entity.Invite;
+import Project.Teaming.Invite.Exception.InviteNotFoundException;
+import Project.Teaming.Invite.Exception.NotInviteOwnerException;
 import Project.Teaming.Invite.Repository.InviteRepository;
 import Project.Teaming.Member.Member;
+import Project.Teaming.Member.MemberNotFoundException;
 import Project.Teaming.Member.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -18,12 +25,12 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
 
     @Override
     @Transactional
-    public void sendInvite(String managerUsername, InviteRequestDto inviteRequestDto) {
+    public void sendInvite(@AuthenticationPrincipal UserDetails userDetails, InviteRequestDto inviteRequestDto) {
         // 사람 찾기
-        Member projectManager = memberRepository.findByUsername(managerUsername)
-                .orElseThrow(() -> new RuntimeException("프로젝트 팀장 없음"));
+        Member projectManager = memberRepository.findByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음"));
         Member projectMember = memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
-                .orElseThrow(() -> new RuntimeException("프로젝트 멤버 (초대되는 사람) 없음"));
+                .orElseThrow(() -> new MemberNotFoundException("프로젝트 멤버 (초대되는 사람) 없음"));
 
         // 생성
         Invite invite = new Invite();
@@ -32,6 +39,23 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
         invite.setAccepted(false);
 
         // 저장
+        inviteRepository.save(invite);
+    }
+
+    @Override
+    @Transactional
+    public void acceptInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
+        Invite invite = inviteRepository.findById(dto.getInviteId())
+                .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
+
+        // UserDetails에서 username 꺼내기
+        String username = userDetails.getUsername();
+
+        if (!invite.getProjectMember().getUsername().equals(username)) {
+            throw new NotInviteOwnerException("본인만 초대를 수락할 수 있습니다.");
+        }
+
+        invite.setAccepted(true);
         inviteRepository.save(invite);
     }
 }

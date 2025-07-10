@@ -16,7 +16,6 @@ public class InviteMapper {
 
     private InviteRequestDto toRequestDto(Invite invite) {
         InviteRequestDto dto = new InviteRequestDto();
-        dto.setProjectManagerUsername(invite.getProjectManager().getUsername());
         dto.setProjectMemberUsername(invite.getProjectMember().getUsername());
         return dto;
     }
