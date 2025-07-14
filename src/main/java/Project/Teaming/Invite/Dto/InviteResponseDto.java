@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class InviteResponseDto {
 
-    private Integer id;
+    private Long id;
     private String projectManagerUsername;
     private String projectMemberUsername;
     private boolean accepted;

@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class AcceptInviteRequestDto {
 
-    private Integer inviteId;
+    private Long inviteId;
 }
 
 // test committ
