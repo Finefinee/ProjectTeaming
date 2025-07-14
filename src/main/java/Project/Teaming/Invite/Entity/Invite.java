@@ -11,7 +11,7 @@ import lombok.Data;
 public class Invite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @JoinColumn(name = "manager", nullable = false)
     @ManyToOne
