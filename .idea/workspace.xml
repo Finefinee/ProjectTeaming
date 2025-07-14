@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="no env">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project/Exception/ProjectNotFoundException.java" afterDir="false" />
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="code simplification">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Exception/AlreadyProjectMemberException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Config/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Dto/InviteRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Dto/InviteRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Service/Impl/InviteServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752458462206</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="code simplification">
+      <option name="closed" value="true" />
+      <created>1752458993025</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752458993025</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +201,7 @@
     <MESSAGE value="?" />
     <MESSAGE value="acceptInvite -&gt; project.getProjectMember().add(invite.getProjectMember());" />
     <MESSAGE value="no env" />
-    <option name="LAST_COMMIT_MESSAGE" value="no env" />
+    <MESSAGE value="code simplification" />
+    <option name="LAST_COMMIT_MESSAGE" value="code simplification" />
   </component>
 </project>

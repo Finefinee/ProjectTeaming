@@ -1,5 +1,6 @@
 package Project.Teaming.Config;
 
+import Project.Teaming.Invite.Exception.AlreadyProjectMemberException;
 import Project.Teaming.Invite.Exception.InviteNotFoundException;
 import Project.Teaming.Invite.Exception.NotInviteOwnerException;
 import Project.Teaming.Member.Exception.MemberNotFoundException;
@@ -32,6 +33,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NotInviteOwnerException.class)
     public ResponseEntity<String> handleNotInviteOwnerException(NotInviteOwnerException e) {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
+    }
+
+    @ExceptionHandler(AlreadyProjectMemberException.class)
+    public ResponseEntity<String> handleAlreadyProjectMemberException(AlreadyProjectMemberException e) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
     }
 
     @ExceptionHandler(Exception.class)

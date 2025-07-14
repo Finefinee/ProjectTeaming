@@ -3,6 +3,7 @@ package Project.Teaming.Invite.Service.Impl;
 import Project.Teaming.Invite.Dto.AcceptInviteRequestDto;
 import Project.Teaming.Invite.Dto.InviteRequestDto;
 import Project.Teaming.Invite.Entity.Invite;
+import Project.Teaming.Invite.Exception.AlreadyProjectMemberException;
 import Project.Teaming.Invite.Exception.InviteNotFoundException;
 import Project.Teaming.Invite.Exception.NotInviteOwnerException;
 import Project.Teaming.Invite.Repository.InviteRepository;
@@ -13,11 +14,9 @@ import Project.Teaming.Project.Entity.Project;
 import Project.Teaming.Project.Exception.ProjectNotFoundException;
 import Project.Teaming.Project.Interface.ProjectRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 @Service
 @RequiredArgsConstructor
@@ -29,50 +28,55 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
 
     @Override
     @Transactional
-    public void sendInvite(@AuthenticationPrincipal UserDetails userDetails, InviteRequestDto inviteRequestDto) {
+    public void sendInvite(UserDetails userDetails, InviteRequestDto inviteRequestDto) {
+        // 1. 프로젝트 팀장(로그인 유저) 조회
+        Member projectManager = memberRepository.findByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음"));
 
-        // 생성
+        // 2. 초대받을 멤버 조회
+        Member projectMember = memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
+                .orElseThrow(() -> new MemberNotFoundException("프로젝트 멤버(초대 대상) 없음"));
+
+        // 3. 프로젝트 조회
+        Project project = projectRepository.findById(inviteRequestDto.getProjectId())
+                .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"));
+
+        // 4. 초대 객체 생성 및 저장
         Invite invite = new Invite();
-
-        invite.setProjectManager(memberRepository.findByUsername(userDetails.getUsername())
-                .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음")));
-
-        invite.setProjectMember(memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
-                .orElseThrow(() -> new MemberNotFoundException("프로젝트 멤버 (초대되는 사람) 없음")));
-
-        invite.setProject(projectRepository.findById(inviteRequestDto.getProjectId())
-                .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음")));
-
+        invite.setProjectManager(projectManager);
+        invite.setProjectMember(projectMember);
+        invite.setProject(project);
         invite.setAccepted(false);
 
-        // 저장
         inviteRepository.save(invite);
     }
 
     @Override
     @Transactional
     public void acceptInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
+        // 1. 초대 정보 조회
         Invite invite = inviteRepository.findById(dto.getInviteId())
                 .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
 
-        // UserDetails에서 username 꺼내기
+        // 2. 초대 수락 자격 확인 (본인만 수락 가능)
         String username = userDetails.getUsername();
-
         if (!invite.getProjectMember().getUsername().equals(username)) {
             throw new NotInviteOwnerException("본인만 초대를 수락할 수 있습니다.");
         }
 
+        // 3. 초대 수락 처리
         invite.setAccepted(true);
 
-        // 1. Invite에서 Project 가져오기 (Invite 엔티티에 Project가 있어야 함)
-        Project project = invite.getProject(); // Invite에 getProject() 있어야 함
+        // 4. 프로젝트 팀원으로 등록 (중복 등록 방지)
+        Project project = invite.getProject();
+        Member projectMember = invite.getProjectMember();
+        if (project.getProjectMember().contains(projectMember)) {
+            throw new AlreadyProjectMemberException("이미 프로젝트의 멤버입니다.");
+        }
+        project.getProjectMember().add(projectMember);
 
-        // 2. 프로젝트의 멤버 리스트에 추가
-        project.getProjectMember().add(invite.getProjectMember());
-
-        // 3. 저장
+        // 5. 저장
         inviteRepository.save(invite);
-        // 반드시 프로젝트도 저장
         projectRepository.save(project);
     }
 }
