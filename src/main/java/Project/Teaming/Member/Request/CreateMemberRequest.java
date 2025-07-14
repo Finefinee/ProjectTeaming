@@ -5,6 +5,6 @@ public record CreateMemberRequest(
         String username,
         String name,
         String password,
-        int userId
+        int class_code
     ) {
 }

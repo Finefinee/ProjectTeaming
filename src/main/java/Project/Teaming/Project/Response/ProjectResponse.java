@@ -14,7 +14,7 @@ public record ProjectResponse(
                 project.getTitle(),
                 project.getContent(),
                 project.getProjectManager(),
-                project.getProjectMember()
+                project.getProjectMember().toString()
         );
     }
 

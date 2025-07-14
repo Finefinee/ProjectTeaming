@@ -1,5 +1,6 @@
 package Project.Teaming.Member.Controller;
 
+import Project.Teaming.DTO.SignUpRequest;
 import Project.Teaming.Member.Request.CreateMemberRequest;
 import Project.Teaming.Member.Request.UpdateMember;
 import Project.Teaming.Member.Response.MemberResponse;
@@ -18,8 +19,8 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping
-    public void createMember(@RequestBody CreateMemberRequest request) {
-        memberService.createMember(request);
+    public void createMember(@RequestBody SignUpRequest request) {
+        memberService.signUp(request);
     }
 
     @GetMapping("/{id}")

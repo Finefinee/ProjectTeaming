@@ -16,7 +16,7 @@ public record MemberResponse(
                 member.getUsername(),
                 member.getName(),
                 member.getPassword(),
-                member.getUserId()
+                member.getClass_code()
         );
     }
 

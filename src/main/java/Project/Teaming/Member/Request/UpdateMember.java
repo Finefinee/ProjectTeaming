@@ -5,6 +5,6 @@ public record UpdateMember(
         String username,
         String name,
         String password,
-        int userId
+        int class_code
 ) {
 }
