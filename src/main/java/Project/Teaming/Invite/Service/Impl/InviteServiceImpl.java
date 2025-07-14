@@ -7,6 +7,7 @@ import Project.Teaming.Invite.Exception.AlreadyProjectMemberException;
 import Project.Teaming.Invite.Exception.InviteNotFoundException;
 import Project.Teaming.Invite.Exception.NotInviteOwnerException;
 import Project.Teaming.Invite.Repository.InviteRepository;
+import Project.Teaming.Invite.Service.InviteService;
 import Project.Teaming.Member.Entity.Member;
 import Project.Teaming.Member.Exception.MemberNotFoundException;
 import Project.Teaming.Member.Interface.MemberRepository;
@@ -20,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteService {
+public class InviteServiceImpl implements InviteService {
 
     private final InviteRepository inviteRepository;
     private final MemberRepository memberRepository;
