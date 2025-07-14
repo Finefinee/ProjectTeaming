@@ -2,6 +2,7 @@ package Project.Teaming.Project.Entity;
 
 import Project.Teaming.Member.Entity.Member;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -16,7 +17,7 @@ public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(length = 50, nullable = false)
     private String title; //제목
