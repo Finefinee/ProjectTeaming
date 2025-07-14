@@ -9,6 +9,8 @@ import Project.Teaming.Invite.Repository.InviteRepository;
 import Project.Teaming.Member.Entity.Member;
 import Project.Teaming.Member.Exception.MemberNotFoundException;
 import Project.Teaming.Member.Interface.MemberRepository;
+import Project.Teaming.Project.Entity.Project;
+import Project.Teaming.Project.Interface.ProjectRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,6 +24,7 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
 
     private final InviteRepository inviteRepository;
     private final MemberRepository memberRepository;
+    private final ProjectRepository projectRepository;
 
     @Override
     @Transactional
@@ -57,5 +60,16 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
 
         invite.setAccepted(true);
         inviteRepository.save(invite);
+
+        // 1. Invite에서 Project 가져오기 (Invite 엔티티에 Project가 있어야 함)
+        Project project = invite.getProject(); // Invite에 getProject() 있어야 함
+
+        // 2. 프로젝트의 멤버 리스트에 추가
+        project.getProjectMember().add(invite.getProjectMember());
+
+        // 3. 저장
+        inviteRepository.save(invite);
+        // 반드시 프로젝트도 저장
+        projectRepository.save(project);
     }
 }

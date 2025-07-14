@@ -1,6 +1,7 @@
 package Project.Teaming.Invite.Entity;
 
 import Project.Teaming.Member.Entity.Member;
+import Project.Teaming.Project.Entity.Project;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,6 +20,10 @@ public class Invite {
     @JoinColumn(name = "member", nullable = false)
     @ManyToOne
     private Member projectMember;
+
+    @JoinColumn(name = "project", nullable = false) // 어떤 프로젝트 초대인지
+    @ManyToOne
+    private Project project;
 
     @Column(nullable = false)
     private boolean accepted = false;

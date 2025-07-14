@@ -1,9 +1,12 @@
 package Project.Teaming.Project.Entity;
 
+import Project.Teaming.Member.Entity.Member;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -22,5 +25,11 @@ public class Project {
     @Column(nullable = false)
     private String projectManager; // 본명
 
-    private String projectMember; // 배열
+    @ManyToMany
+    @JoinTable(
+            name = "project_members",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "member_id")
+    )
+    private List<Member> projectMember; // 배열
 }
