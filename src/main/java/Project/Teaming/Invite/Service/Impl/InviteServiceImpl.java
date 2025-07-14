@@ -59,7 +59,6 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
         }
 
         invite.setAccepted(true);
-        inviteRepository.save(invite);
 
         // 1. Invite에서 Project 가져오기 (Invite 엔티티에 Project가 있어야 함)
         Project project = invite.getProject(); // Invite에 getProject() 있어야 함
