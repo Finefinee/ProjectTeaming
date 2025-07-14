@@ -10,6 +10,7 @@ import Project.Teaming.Member.Entity.Member;
 import Project.Teaming.Member.Exception.MemberNotFoundException;
 import Project.Teaming.Member.Interface.MemberRepository;
 import Project.Teaming.Project.Entity.Project;
+import Project.Teaming.Project.Exception.ProjectNotFoundException;
 import Project.Teaming.Project.Interface.ProjectRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -29,16 +30,19 @@ public class InviteServiceImpl implements Project.Teaming.Invite.Service.InviteS
     @Override
     @Transactional
     public void sendInvite(@AuthenticationPrincipal UserDetails userDetails, InviteRequestDto inviteRequestDto) {
-        // 사람 찾기
-        Member projectManager = memberRepository.findByUsername(userDetails.getUsername())
-                .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음"));
-        Member projectMember = memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
-                .orElseThrow(() -> new MemberNotFoundException("프로젝트 멤버 (초대되는 사람) 없음"));
 
         // 생성
         Invite invite = new Invite();
-        invite.setProjectManager(projectManager);
-        invite.setProjectMember(projectMember);
+
+        invite.setProjectManager(memberRepository.findByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음")));
+
+        invite.setProjectMember(memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
+                .orElseThrow(() -> new MemberNotFoundException("프로젝트 멤버 (초대되는 사람) 없음")));
+
+        invite.setProject(projectRepository.findById(inviteRequestDto.getProjectId())
+                .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음")));
+
         invite.setAccepted(false);
 
         // 저장

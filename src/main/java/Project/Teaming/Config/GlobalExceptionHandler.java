@@ -3,6 +3,7 @@ package Project.Teaming.Config;
 import Project.Teaming.Invite.Exception.InviteNotFoundException;
 import Project.Teaming.Invite.Exception.NotInviteOwnerException;
 import Project.Teaming.Member.Exception.MemberNotFoundException;
+import Project.Teaming.Project.Exception.ProjectNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(InviteNotFoundException.class)
     public ResponseEntity<String> handleInviteNotFound(InviteNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
+    @ExceptionHandler(ProjectNotFoundException.class)
+    public ResponseEntity<String> handleProjectNotFound(ProjectNotFoundException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
