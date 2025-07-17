@@ -1,4 +1,4 @@
-package Project.Teaming.Project.Request;
+package Project.Teaming.Project.dto;
 
 public record DeleteProjectRequest(
         Integer id,

@@ -1,9 +1,10 @@
 package Project.Teaming.Project.Controller;
 
 import Project.Teaming.Project.Service.ProjectService;
-import Project.Teaming.Project.Request.CreateProjectRequest;
-import Project.Teaming.Project.Request.UpdateProject;
-import Project.Teaming.Project.Response.ProjectResponse;
+import Project.Teaming.Project.dto.CreateProjectRequest;
+import Project.Teaming.Project.dto.DeleteProjectRequest;
+import Project.Teaming.Project.dto.UpdateProject;
+import Project.Teaming.Project.dto.ProjectResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,10 +23,11 @@ public class ProjectController {
         projectService.createProject(request);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteProjectById(@PathVariable int id) {
-        projectService.deleteProjectById(id);
+    @DeleteMapping
+    public void deleteProject(@RequestBody DeleteProjectRequest request) {
+        projectService.deleteProject(request);
     }
+
 
     @PatchMapping()
     public ProjectResponse updateProject (@RequestBody UpdateProject request) {
