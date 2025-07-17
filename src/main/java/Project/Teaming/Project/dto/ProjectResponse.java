@@ -1,4 +1,4 @@
-package Project.Teaming.Project.Response;
+package Project.Teaming.Project.dto;
 
 import Project.Teaming.Project.Entity.Project;
 

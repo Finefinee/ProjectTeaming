@@ -1,5 +1,6 @@
 package Project.Teaming.Member.Controller;
 
+import Project.Teaming.DTO.LoginRequest;
 import Project.Teaming.DTO.SignUpRequest;
 import Project.Teaming.Member.Request.CreateMemberRequest;
 import Project.Teaming.Member.Request.UpdateMember;
@@ -11,16 +12,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/post")
+@RequestMapping("/auth")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 
 public class MemberController {
     private final MemberService memberService;
 
-    @PostMapping
+    @PostMapping("/signup")
     public void createMember(@RequestBody SignUpRequest request) {
         memberService.signUp(request);
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequest request) {
+        return memberService.login(request);
     }
 
     @GetMapping("/{id}")
@@ -42,5 +48,4 @@ public class MemberController {
     public List<MemberResponse> findAll() {
         return memberService.findAll();
     }
-
 }
