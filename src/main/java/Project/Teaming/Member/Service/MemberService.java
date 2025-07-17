@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 
@@ -37,11 +38,11 @@ public class MemberService {
                 .role("ROLE_USER")
                 .build();
         memberRepository.save(member);
-        return ResponseEntity.ok(member);
+        return ResponseEntity.ok(Map.of("message", "회원가입이 완료되었습니다."));
     }
 
     // 로그인
-    public String login (LoginRequest request) {
+    public ResponseEntity<?> login (LoginRequest request) {
         Member member = memberRepository.findByUsername(request.username()).orElseThrow(()
                 -> new IllegalArgumentException("사용자명 혹은 비밀번호가 잘못되었습니다."));
         if (!passwordEncoder.matches(request.password(), member.getPassword())) {
@@ -53,42 +54,49 @@ public class MemberService {
                 member.getEmail(),
                 member.getClass_code()
         );
-        return jwtProvider.createToken(tokenRequest);
+        String token = jwtProvider.createToken(tokenRequest);
+        return ResponseEntity.ok(Map.of("token", token));
     }
 
-    public String delete(DeleteMemberRequest request) { //회원 탈퇴
-        Member member = memberRepository.findById(request.id()).orElse(null);
+    public ResponseEntity<?> delete(DeleteMemberRequest request) { //회원 탈퇴
+        Member member = memberRepository.findById(request.id())
+                .orElseThrow(() -> new IllegalArgumentException("선택하신 회원을 찾을 수 없습니다."));
 
-        if (member == null) {
-            throw new IllegalArgumentException(request.id() + "는 없는 사람입니다");
-        }
         memberRepository.delete(member);
-        return "성공적으로 탈퇴되었습니다.";
+        return ResponseEntity.ok(Map.of("message", "회원탈퇴 되었습니다."));
     }
+
+
+
     public MemberResponse findMemberById(int id) {
-        Member e = memberRepository.findById(id).orElse(null);
-        if (e == null) {
-            throw new IllegalArgumentException(id + "는 없는 사람입니다");
-        }
-        return MemberResponse.of(e);
+
+        Member member = memberRepository.findById(id)
+                .orElseThrow(() ->  new IllegalArgumentException(id+"는 없는 사람입니다."));
+
+        return MemberResponse.of(member);
     }
+
+
     public void deleteMemberById(int id) {
-        Member e = memberRepository.findById(id).orElse(null);
-        if (e == null) {
-            throw new IllegalArgumentException(id + "없는 사람입니다");
-        }
-        memberRepository.delete(e);
+        Member member = memberRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(id + "없는 사람입니다."));
+
+        memberRepository.delete(member);
     }
+
+
     public MemberResponse updateMember(UpdateMember request) { // 프로필 수정
-        Member e = memberRepository.findById(request.id()).orElse(null);
-        if (e == null) {
-            throw new IllegalArgumentException(request.id()+"는 없는 사람입니다.");
-        }
-        e.setId(request.id());
+        Member member = memberRepository.findById(request.id())
+                .orElseThrow( () -> new IllegalArgumentException(request.id()+"는 없는 사람입니다."));
 
-        memberRepository.save(e);
+        member.setName(request.name());
+        member.setUsername(request.username());
+        member.setEmail(request.Email());
 
-        return MemberResponse.of(e);
+
+        memberRepository.save(member);
+
+        return MemberResponse.of(member);
     }
 
     public List<MemberResponse> findAll() {

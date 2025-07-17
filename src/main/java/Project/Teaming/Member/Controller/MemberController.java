@@ -7,6 +7,7 @@ import Project.Teaming.Member.Request.UpdateMember;
 import Project.Teaming.Member.Response.MemberResponse;
 import Project.Teaming.Member.Service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,8 +26,8 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody LoginRequest request) {
-        return memberService.login(request);
+    public void login(@RequestBody LoginRequest request) {
+        memberService.login(request);
     }
 
     @GetMapping("/{id}")

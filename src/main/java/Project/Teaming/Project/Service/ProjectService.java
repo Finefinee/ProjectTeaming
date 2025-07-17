@@ -28,8 +28,12 @@ public class ProjectService {
     private final ProjectRepository projectRepository;
     private final MemberRepository memberRepository;
 
+    //프로젝트 생성
     public ProjectResponse createProject(CreateProjectRequest request) {
+
+        
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
 
         Member member = memberRepository.findByUsername(auth.getName())
                 .orElseThrow(() -> new UsernameNotFoundException("유저를 찾을 수 없습니다."));
