@@ -1,4 +1,4 @@
-package Project.Teaming.Project.Request;
+package Project.Teaming.Project.dto;
 
 public record UpdateProject(
         Integer id,
