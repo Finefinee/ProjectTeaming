@@ -80,4 +80,20 @@ public class InviteServiceImpl implements InviteService {
         inviteRepository.save(invite);
         projectRepository.save(project);
     }
+
+    @Transactional
+    @Override
+    public void refuseInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
+        // 1. 초대 정보 조회
+        Invite invite = inviteRepository.findById(dto.getInviteId())
+                .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
+
+        // 2. 초대 수락 자격 확인 (본인만 수락 가능)
+        String username = userDetails.getUsername();
+        if (!invite.getProjectMember().getUsername().equals(username)) {
+            throw new NotInviteOwnerException("본인만 초대를 수락할 수 있습니다.");
+        }
+
+        inviteRepository.delete(invite);
+    }
 }
