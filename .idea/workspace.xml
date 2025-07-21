@@ -4,10 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="code simplification">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Exception/AlreadyProjectMemberException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="edit InviteController">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/MemberRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__7__14__오전_10_58,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Controller/InviteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Controller/InviteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Service/Impl/InviteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Service/InviteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite/Service/InviteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,32 +86,32 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2zg0GhZEui64yrIYqnBazpIG7RX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.ProjectTeaming 빌드.executor": "Run",
-    "Gradle.ProjectTeaming-main-CRUDfixed 빌드.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.TeamingApplication.executor": "Run",
-    "Spring Boot.이름이 지정되지 않았습니다.executor": "Run",
-    "git-widget-placeholder": "invite2에 #17개",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.ProjectTeaming 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProjectTeaming-main-CRUDfixed 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProjectTeaming-merge#24 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.TeamingApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.이름이 지정되지 않았습니다.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;invite4&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="TeamingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="ms-17" />
@@ -119,8 +137,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
       </set>
     </attachedChunks>
   </component>
@@ -138,6 +156,14 @@
       <workItem from="1752156162757" duration="79000" />
       <workItem from="1752156248764" duration="891000" />
       <workItem from="1752208386083" duration="8825000" />
+      <workItem from="1752733876297" duration="5088000" />
+      <workItem from="1752813507282" duration="8000" />
+      <workItem from="1752814371434" duration="2087000" />
+      <workItem from="1752936677764" duration="1219000" />
+      <workItem from="1752940495463" duration="16000" />
+      <workItem from="1752940555399" duration="832000" />
+      <workItem from="1752945840898" duration="2924000" />
+      <workItem from="1753093707406" duration="450000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -187,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752458993025</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="edit InviteController">
+      <option name="closed" value="true" />
+      <created>1752733975718</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752733975718</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +236,7 @@
     <MESSAGE value="acceptInvite -&gt; project.getProjectMember().add(invite.getProjectMember());" />
     <MESSAGE value="no env" />
     <MESSAGE value="code simplification" />
-    <option name="LAST_COMMIT_MESSAGE" value="code simplification" />
+    <MESSAGE value="edit InviteController" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit InviteController" />
   </component>
 </project>
