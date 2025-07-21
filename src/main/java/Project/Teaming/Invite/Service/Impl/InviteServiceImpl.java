@@ -34,6 +34,13 @@ public class InviteServiceImpl implements InviteService {
         Member projectManager = memberRepository.findByUsername(userDetails.getUsername())
                 .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음"));
 
+        if (userDetails.getUsername() != projectRepository.findById(inviteRequestDto.getProjectId())
+                .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"))
+                .getProjectManager()
+        ) {
+            throw new NotInviteOwnerException("프로젝트 팀장만 초대할 수 있습니다.");
+        }
+
         // 2. 초대받을 멤버 조회
         Member projectMember = memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
                 .orElseThrow(() -> new MemberNotFoundException("프로젝트 멤버(초대 대상) 없음"));
