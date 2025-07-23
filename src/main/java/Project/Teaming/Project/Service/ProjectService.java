@@ -30,13 +30,11 @@ public class ProjectService {
 
     //프로젝트 생성
     public ProjectResponse createProject(CreateProjectRequest request) {
-
-        
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
 
         Member member = memberRepository.findByUsername(auth.getName())
                 .orElseThrow(() -> new UsernameNotFoundException("유저를 찾을 수 없습니다."));
+
         List<Member> MemberList = new ArrayList<>();
         MemberList.add(member);
         Project project = Project.builder()
