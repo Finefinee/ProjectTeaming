@@ -1,11 +1,7 @@
 package Project.Teaming.Invite.Dto;
 
-import lombok.Data;
+public record AcceptInviteRequestDto (
+        Integer inviteId
+) {
 
-@Data
-public class AcceptInviteRequestDto {
-
-    private Integer inviteId;
 }
-
-// test committ

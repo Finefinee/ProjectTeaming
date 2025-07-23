@@ -3,20 +3,27 @@ package Project.Teaming.Invite.Mapper;
 import Project.Teaming.Invite.Dto.InviteRequestDto;
 import Project.Teaming.Invite.Dto.InviteResponseDto;
 import Project.Teaming.Invite.Entity.Invite;
+import Project.Teaming.Member.Entity.Member;
+import Project.Teaming.Project.Entity.Project;
 
 public class InviteMapper {
-    private InviteResponseDto toResponseDto(Invite invite) {
-        InviteResponseDto dto = new InviteResponseDto();
-        dto.setId(invite.getId());
-        dto.setProjectManagerUsername(invite.getProjectManager().getUsername());
-        dto.setProjectMemberUsername(invite.getProjectMember().getUsername());
-        dto.setAccepted(invite.isAccepted());
-        return dto;
-    }
 
-    private InviteRequestDto toRequestDto(Invite invite) {
-        InviteRequestDto dto = new InviteRequestDto();
-        dto.setProjectMemberUsername(invite.getProjectMember().getUsername());
-        return dto;
+    // Invite → InviteResponseDto
+    public static InviteResponseDto toDto(Invite invite) {
+        return new InviteResponseDto(
+                invite.getId(),
+                invite.getProject().getProjectManager(),
+                invite.getProjectMember().getUsername(),
+                invite.isAccepted()
+        );
+    }
+    
+    // InviteRequestDto → Invite
+    public static Invite toEntity(InviteRequestDto dto, Member projectMember, Project project) {
+        return Invite.builder()
+                .projectMember(projectMember)
+                .project(project)
+                .accepted(false) // 처음엔 초대 수락 안 했으니까 false로 초기화
+                .build();
     }
 }
