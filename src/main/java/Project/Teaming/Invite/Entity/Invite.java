@@ -3,11 +3,17 @@ package Project.Teaming.Invite.Entity;
 import Project.Teaming.Member.Entity.Member;
 import Project.Teaming.Project.Entity.Project;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "Invites")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Invite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
