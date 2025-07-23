@@ -2,6 +2,8 @@ package Project.Teaming.Invite.Controller;
 
 import Project.Teaming.Invite.Dto.AcceptInviteRequestDto;
 import Project.Teaming.Invite.Dto.InviteRequestDto;
+import Project.Teaming.Invite.Dto.InviteResponseDto;
+import Project.Teaming.Invite.Entity.Invite;
 import Project.Teaming.Invite.Service.InviteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -9,9 +11,13 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/invites") // 관례상 복수로! (ex: /invites)
+@RequestMapping("/invites")
 @CrossOrigin(origins = "*")
 public class InviteController {
 
@@ -45,5 +51,20 @@ public class InviteController {
     ) {
         inviteService.refuseInvite(userDetails, acceptInviteRequestDto);
         return ResponseEntity.noContent().build(); // DELETE 요청에 적절한 응답
+    }
+
+    @GetMapping
+    public ResponseEntity<List<InviteResponseDto>> getAllInvites() {
+        List<Invite> invites = inviteService.getAllInvites();
+        List<InviteResponseDto> inviteResponseDtos = invites.stream()
+                .map(invite -> new InviteResponseDto(
+                        invite.getId(),
+                        invite.getProject().getProjectManager(),
+                        invite.getProjectMember().getUsername(),
+                        invite.isAccepted()
+                ))
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(inviteResponseDtos);
     }
 }

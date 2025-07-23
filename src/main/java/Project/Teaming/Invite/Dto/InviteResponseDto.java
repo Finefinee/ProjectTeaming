@@ -1,12 +1,10 @@
 package Project.Teaming.Invite.Dto;
 
-import lombok.Data;
+public record InviteResponseDto (
+        Integer id,
+        String projectManagerUsername,
+        String projectMemberUsername,
+        boolean accepted
+) {
 
-@Data
-public class InviteResponseDto {
-
-    private Integer id;
-    private String projectManagerUsername;
-    private String projectMemberUsername;
-    private boolean accepted;
 }

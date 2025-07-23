@@ -19,6 +19,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class InviteServiceImpl implements InviteService {
@@ -102,5 +104,10 @@ public class InviteServiceImpl implements InviteService {
         }
 
         inviteRepository.delete(invite);
+    }
+
+    @Override
+    public List<Invite> getAllInvites() {
+        return inviteRepository.findAll();
     }
 }
