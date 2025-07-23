@@ -1,4 +1,4 @@
-package Project.Teaming.config;
+package Project.Teaming.config1;
 
 import Project.Teaming.invite.Exception.AlreadyProjectMemberException;
 import Project.Teaming.invite.Exception.InviteNotFoundException;

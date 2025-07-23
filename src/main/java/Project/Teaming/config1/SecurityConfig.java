@@ -1,4 +1,4 @@
-package Project.Teaming.config;
+package Project.Teaming.config1;
 
 import Project.Teaming.member.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
