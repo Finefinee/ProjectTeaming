@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -37,9 +38,9 @@ public class InviteServiceImpl implements InviteService {
         Member projectManager = memberRepository.findByUsername(userDetails.getUsername())
                 .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음"));
 
-        if (userDetails.getUsername() != projectRepository.findById(inviteRequestDto.projectId())
+        if (!Objects.equals(userDetails.getUsername(), projectRepository.findById(inviteRequestDto.projectId())
                 .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"))
-                .getProjectManager()
+                .getProjectManager())
         ) {
             throw new NotInviteOwnerException("프로젝트 팀장만 초대할 수 있습니다.");
         }
