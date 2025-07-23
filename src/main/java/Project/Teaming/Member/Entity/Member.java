@@ -1,4 +1,4 @@
-package Project.Teaming.Member.Entity;
+package Project.Teaming.member.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

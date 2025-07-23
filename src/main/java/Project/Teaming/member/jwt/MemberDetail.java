@@ -1,6 +1,6 @@
-package Project.Teaming.JWT;
+package Project.Teaming.member.jwt;
 
-import Project.Teaming.Member.Entity.Member;
+import Project.Teaming.member.entity.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

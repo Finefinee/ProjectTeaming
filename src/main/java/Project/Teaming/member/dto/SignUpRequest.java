@@ -1,10 +1,10 @@
-package Project.Teaming.Member.Request;
+package Project.Teaming.member.dto;
 
-public record DeleteMemberRequest(
-        int id,
+public record SignUpRequest(
         String username,
         String name,
         String password,
+        String email,
         int class_code
 ) {
 }

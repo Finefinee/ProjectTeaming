@@ -1,22 +1,17 @@
-package Project.Teaming.Member.Service;
+package Project.Teaming.member.service;
 
-import Project.Teaming.DTO.CreateTokenRequest;
-import Project.Teaming.DTO.LoginRequest;
-import Project.Teaming.DTO.SignUpRequest;
-import Project.Teaming.JWT.JwtProvider;
-import Project.Teaming.Member.Entity.Member;
-import Project.Teaming.Member.Interface.MemberRepository;
-import Project.Teaming.Member.Request.DeleteMemberRequest;
-import Project.Teaming.Member.Request.UpdateMember;
-import Project.Teaming.Member.Response.MemberResponse;
+import Project.Teaming.member.dto.CreateTokenRequest;
+import Project.Teaming.member.dto.LoginRequest;
+import Project.Teaming.member.dto.SignUpRequest;
+import Project.Teaming.member.jwt.JwtProvider;
+import Project.Teaming.member.entity.Member;
+import Project.Teaming.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 
 @Service
@@ -56,50 +51,5 @@ public class MemberService {
         );
         String token = jwtProvider.createToken(tokenRequest);
         return ResponseEntity.ok(Map.of("token", token));
-    }
-
-    public ResponseEntity<?> delete(DeleteMemberRequest request) { //회원 탈퇴
-        Member member = memberRepository.findById(request.id())
-                .orElseThrow(() -> new IllegalArgumentException("선택하신 회원을 찾을 수 없습니다."));
-
-        memberRepository.delete(member);
-        return ResponseEntity.ok(Map.of("message", "회원탈퇴 되었습니다."));
-    }
-
-
-
-    public MemberResponse findMemberById(int id) {
-
-        Member member = memberRepository.findById(id)
-                .orElseThrow(() ->  new IllegalArgumentException(id+"는 없는 사람입니다."));
-
-        return MemberResponse.of(member);
-    }
-
-
-    public void deleteMemberById(int id) {
-        Member member = memberRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException(id + "없는 사람입니다."));
-
-        memberRepository.delete(member);
-    }
-
-
-    public MemberResponse updateMember(UpdateMember request) { // 프로필 수정
-        Member member = memberRepository.findById(request.id())
-                .orElseThrow( () -> new IllegalArgumentException(request.id()+"는 없는 사람입니다."));
-
-        member.setName(request.name());
-        member.setUsername(request.username());
-        member.setEmail(request.Email());
-
-
-        memberRepository.save(member);
-
-        return MemberResponse.of(member);
-    }
-
-    public List<MemberResponse> findAll() {
-        return memberRepository.findAll().stream().map(MemberResponse::of).collect(Collectors.toList());
     }
 }

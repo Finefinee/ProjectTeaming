@@ -1,4 +1,4 @@
-package Project.Teaming.JWT;
+package Project.Teaming.member.jwt;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import io.jsonwebtoken.Claims;
@@ -8,7 +8,7 @@ import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
-import Project.Teaming.DTO.CreateTokenRequest;
+import Project.Teaming.member.dto.CreateTokenRequest;
 
 import javax.crypto.SecretKey;
 import java.util.Date;

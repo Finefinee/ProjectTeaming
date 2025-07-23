@@ -1,10 +1,10 @@
-package Project.Teaming.Project.Controller;
+package Project.Teaming.project.controller;
 
-import Project.Teaming.Project.Service.ProjectService;
-import Project.Teaming.Project.dto.CreateProjectRequest;
-import Project.Teaming.Project.dto.DeleteProjectRequest;
-import Project.Teaming.Project.dto.UpdateProject;
-import Project.Teaming.Project.dto.ProjectResponse;
+import Project.Teaming.project.Service.ProjectService;
+import Project.Teaming.project.dto.CreateProjectRequest;
+import Project.Teaming.project.dto.DeleteProjectRequest;
+import Project.Teaming.project.dto.UpdateProject;
+import Project.Teaming.project.dto.ProjectResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
-package Project.Teaming.JWT;
+package Project.Teaming.member.jwt;
 
-import Project.Teaming.Member.Entity.Member;
-import Project.Teaming.Member.Interface.MemberRepository;
+import Project.Teaming.member.entity.Member;
+import Project.Teaming.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
