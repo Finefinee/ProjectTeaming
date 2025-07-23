@@ -3,18 +3,18 @@ package Project.Teaming.Invite.Controller;
 import Project.Teaming.Invite.Dto.AcceptInviteRequestDto;
 import Project.Teaming.Invite.Dto.InviteRequestDto;
 import Project.Teaming.Invite.Dto.InviteResponseDto;
-import Project.Teaming.Invite.Entity.Invite;
+import Project.Teaming.Invite.Mapper.InviteMapper;
 import Project.Teaming.Invite.Service.InviteService;
+import Project.Teaming.Member.Entity.Member;
 import Project.Teaming.Member.Interface.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -59,9 +59,10 @@ public class InviteController {
     public ResponseEntity<List<InviteResponseDto>> getInvitesByUsername(
             @AuthenticationPrincipal UserDetails userDetails
     ) {
-        inviteService.getAllInvitesByUsername(userDetails).stream()
-                .map(invite -> new InviteResponseDto(memberRepository.findByUsername(userDetails.getUsername()).))
-                .toList()
+        List<InviteResponseDto> inviteDtos = inviteService.getAllInvitesByUsername(userDetails).stream()
+                .map(invite -> InviteMapper.toDto(invite))
+                .toList();
 
+        return ResponseEntity.ok(inviteDtos);
     }
 }
