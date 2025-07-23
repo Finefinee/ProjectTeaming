@@ -5,6 +5,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -25,9 +26,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     // protected는 같은 클래스 혹은 상속받은 클래스에서만 사용 가능(= 외부에서 호출하지 못함)
-    protected void doFilterInternal(HttpServletRequest request, // 클라이언트가 보낸 HTTP 요청
-                                    HttpServletResponse response, // 클라이언트로 보낼 HTTP 응답
-                                    FilterChain filterChain) throws ServletException, IOException { // 위의 요청과 응답을 넘기는 FilterChain객체 선언, 예외 던지기
+    protected void doFilterInternal(@NonNull HttpServletRequest request, // 클라이언트가 보낸 HTTP 요청
+                                    @NonNull HttpServletResponse response, // 클라이언트로 보낼 HTTP 응답
+                                    @NonNull FilterChain filterChain) throws ServletException, IOException { // 위의 요청과 응답을 넘기는 FilterChain객체 선언, 예외 던지기
 
         String token = jwtProvider.resolveToken(request); // 클라이언트가 보낸 HTTP요청 전체에서 토큰값을 꺼내고, jwtProvider에 따라서 토큰 추출
 
