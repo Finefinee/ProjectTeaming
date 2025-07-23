@@ -17,7 +17,7 @@ public class InviteMapper {
                 invite.isAccepted()
         );
     }
-
+    
     // InviteRequestDto → Invite
     public static Invite toEntity(InviteRequestDto dto, Member projectMember, Project project) {
         return Invite.builder()

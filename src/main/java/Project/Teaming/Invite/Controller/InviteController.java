@@ -5,6 +5,7 @@ import Project.Teaming.Invite.Dto.InviteRequestDto;
 import Project.Teaming.Invite.Dto.InviteResponseDto;
 import Project.Teaming.Invite.Entity.Invite;
 import Project.Teaming.Invite.Service.InviteService;
+import Project.Teaming.Member.Interface.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 public class InviteController {
 
     private final InviteService inviteService;
+    private final MemberRepository memberRepository;
 
     // 1. 초대 보내기 (POST /invites)
     @PostMapping
@@ -54,17 +56,12 @@ public class InviteController {
     }
 
     @GetMapping
-    public ResponseEntity<List<InviteResponseDto>> getAllInvites() {
-        List<Invite> invites = inviteService.getAllInvites();
-        List<InviteResponseDto> inviteResponseDtos = invites.stream()
-                .map(invite -> new InviteResponseDto(
-                        invite.getId(),
-                        invite.getProject().getProjectManager(),
-                        invite.getProjectMember().getUsername(),
-                        invite.isAccepted()
-                ))
-                .collect(Collectors.toList());
+    public ResponseEntity<List<InviteResponseDto>> getInvitesByUsername(
+            @AuthenticationPrincipal UserDetails userDetails
+    ) {
+        inviteService.getAllInvitesByUsername(userDetails).stream()
+                .map(invite -> new InviteResponseDto(memberRepository.findByUsername(userDetails.getUsername()).))
+                .toList()
 
-        return ResponseEntity.ok(inviteResponseDtos);
     }
 }

@@ -20,6 +20,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.antlr.v4.runtime.tree.xpath.XPath.findAll;
 
 @Service
 @RequiredArgsConstructor
@@ -36,7 +39,7 @@ public class InviteServiceImpl implements InviteService {
         Member projectManager = memberRepository.findByUsername(userDetails.getUsername())
                 .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음"));
 
-        if (userDetails.getUsername() != projectRepository.findById(inviteRequestDto.getProjectId())
+        if (userDetails.getUsername() != projectRepository.findById(inviteRequestDto.projectId())
                 .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"))
                 .getProjectManager()
         ) {
@@ -44,11 +47,11 @@ public class InviteServiceImpl implements InviteService {
         }
 
         // 2. 초대받을 멤버 조회
-        Member projectMember = memberRepository.findByUsername(inviteRequestDto.getProjectMemberUsername())
+        Member projectMember = memberRepository.findByUsername(inviteRequestDto.projectMemberUsername())
                 .orElseThrow(() -> new MemberNotFoundException("프로젝트 멤버(초대 대상) 없음"));
 
         // 3. 프로젝트 조회
-        Project project = projectRepository.findById(inviteRequestDto.getProjectId())
+        Project project = projectRepository.findById(inviteRequestDto.projectId())
                 .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"));
 
         // 4. 초대 객체 생성 및 저장
@@ -65,7 +68,7 @@ public class InviteServiceImpl implements InviteService {
     @Transactional
     public void acceptInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
         // 1. 초대 정보 조회
-        Invite invite = inviteRepository.findById(dto.getInviteId())
+        Invite invite = inviteRepository.findById(dto.inviteId())
                 .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
 
         // 2. 초대 수락 자격 확인 (본인만 수락 가능)
@@ -94,7 +97,7 @@ public class InviteServiceImpl implements InviteService {
     @Override
     public void refuseInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
         // 1. 초대 정보 조회
-        Invite invite = inviteRepository.findById(dto.getInviteId())
+        Invite invite = inviteRepository.findById(dto.inviteId())
                 .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
 
         // 2. 초대 수락 자격 확인 (본인만 수락 가능)
@@ -109,5 +112,12 @@ public class InviteServiceImpl implements InviteService {
     @Override
     public List<Invite> getAllInvites() {
         return inviteRepository.findAll();
+    }
+
+    @Override
+    public List<Invite> getAllInvitesByUsername(UserDetails userDetails) {
+        return inviteRepository.findAll().stream()
+            .filter(invite -> invite.getProjectMember().getUsername().equals(userDetails.getUsername()))
+            .collect(Collectors.toList());
     }
 }
