@@ -1,19 +1,19 @@
-package Project.Teaming.Invite.Service.Impl;
+package Project.Teaming.invite.Service.Impl;
 
-import Project.Teaming.Invite.Dto.AcceptInviteRequestDto;
-import Project.Teaming.Invite.Dto.InviteRequestDto;
-import Project.Teaming.Invite.Entity.Invite;
-import Project.Teaming.Invite.Exception.AlreadyProjectMemberException;
-import Project.Teaming.Invite.Exception.InviteNotFoundException;
-import Project.Teaming.Invite.Exception.NotInviteOwnerException;
-import Project.Teaming.Invite.Repository.InviteRepository;
-import Project.Teaming.Invite.Service.InviteService;
-import Project.Teaming.Member.Entity.Member;
-import Project.Teaming.Member.Exception.MemberNotFoundException;
-import Project.Teaming.Member.Interface.MemberRepository;
-import Project.Teaming.Project.Entity.Project;
-import Project.Teaming.Project.Exception.ProjectNotFoundException;
-import Project.Teaming.Project.Interface.ProjectRepository;
+import Project.Teaming.invite.Dto.AcceptInviteRequestDto;
+import Project.Teaming.invite.Dto.InviteRequestDto;
+import Project.Teaming.invite.Entity.Invite;
+import Project.Teaming.invite.Exception.AlreadyProjectMemberException;
+import Project.Teaming.invite.Exception.InviteNotFoundException;
+import Project.Teaming.invite.Exception.NotInviteOwnerException;
+import Project.Teaming.invite.Repository.InviteRepository;
+import Project.Teaming.invite.Service.InviteService;
+import Project.Teaming.member.entity.Member;
+import Project.Teaming.member.exception.MemberNotFoundException;
+import Project.Teaming.member.repository.MemberRepository;
+import Project.Teaming.project.entity.Project;
+import Project.Teaming.project.exception.ProjectNotFoundException;
+import Project.Teaming.project.Interface.ProjectRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -21,8 +21,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static org.antlr.v4.runtime.tree.xpath.XPath.findAll;
 
 @Service
 @RequiredArgsConstructor

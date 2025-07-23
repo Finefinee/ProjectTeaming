@@ -1,8 +1,8 @@
-package Project.Teaming.Invite.Service;
+package Project.Teaming.invite.Service;
 
-import Project.Teaming.Invite.Dto.AcceptInviteRequestDto;
-import Project.Teaming.Invite.Dto.InviteRequestDto;
-import Project.Teaming.Invite.Entity.Invite;
+import Project.Teaming.invite.Dto.AcceptInviteRequestDto;
+import Project.Teaming.invite.Dto.InviteRequestDto;
+import Project.Teaming.invite.Entity.Invite;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 

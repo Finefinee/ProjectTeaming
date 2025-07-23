@@ -1,7 +1,7 @@
-package Project.Teaming.Invite.Entity;
+package Project.Teaming.invite.Entity;
 
-import Project.Teaming.Member.Entity.Member;
-import Project.Teaming.Project.Entity.Project;
+import Project.Teaming.member.entity.Member;
+import Project.Teaming.project.entity.Project;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

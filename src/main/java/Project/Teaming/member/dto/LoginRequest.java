@@ -1,4 +1,4 @@
-package Project.Teaming.DTO;
+package Project.Teaming.member.dto;
 
 public record   LoginRequest(
         String username,

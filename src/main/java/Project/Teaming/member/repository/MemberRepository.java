@@ -1,6 +1,6 @@
-package Project.Teaming.Member.Interface;
+package Project.Teaming.member.repository;
 
-import Project.Teaming.Member.Entity.Member;
+import Project.Teaming.member.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

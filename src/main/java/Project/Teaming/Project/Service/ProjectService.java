@@ -1,13 +1,13 @@
-package Project.Teaming.Project.Service;
+package Project.Teaming.project.Service;
 
-import Project.Teaming.Member.Entity.Member;
-import Project.Teaming.Member.Interface.MemberRepository;
-import Project.Teaming.Project.Entity.Project;
-import Project.Teaming.Project.Interface.ProjectRepository;
-import Project.Teaming.Project.dto.CreateProjectRequest;
-import Project.Teaming.Project.dto.DeleteProjectRequest;
-import Project.Teaming.Project.dto.UpdateProject;
-import Project.Teaming.Project.dto.ProjectResponse;
+import Project.Teaming.member.entity.Member;
+import Project.Teaming.member.repository.MemberRepository;
+import Project.Teaming.project.entity.Project;
+import Project.Teaming.project.Interface.ProjectRepository;
+import Project.Teaming.project.dto.CreateProjectRequest;
+import Project.Teaming.project.dto.DeleteProjectRequest;
+import Project.Teaming.project.dto.UpdateProject;
+import Project.Teaming.project.dto.ProjectResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;

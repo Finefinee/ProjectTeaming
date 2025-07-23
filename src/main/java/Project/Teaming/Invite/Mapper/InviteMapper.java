@@ -1,10 +1,10 @@
-package Project.Teaming.Invite.Mapper;
+package Project.Teaming.invite.Mapper;
 
-import Project.Teaming.Invite.Dto.InviteRequestDto;
-import Project.Teaming.Invite.Dto.InviteResponseDto;
-import Project.Teaming.Invite.Entity.Invite;
-import Project.Teaming.Member.Entity.Member;
-import Project.Teaming.Project.Entity.Project;
+import Project.Teaming.invite.Dto.InviteRequestDto;
+import Project.Teaming.invite.Dto.InviteResponseDto;
+import Project.Teaming.invite.Entity.Invite;
+import Project.Teaming.member.entity.Member;
+import Project.Teaming.project.entity.Project;
 
 public class InviteMapper {
 

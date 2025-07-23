@@ -1,17 +1,15 @@
-package Project.Teaming.Invite.Controller;
+package Project.Teaming.invite.Controller;
 
-import Project.Teaming.Invite.Dto.AcceptInviteRequestDto;
-import Project.Teaming.Invite.Dto.InviteRequestDto;
-import Project.Teaming.Invite.Dto.InviteResponseDto;
-import Project.Teaming.Invite.Mapper.InviteMapper;
-import Project.Teaming.Invite.Service.InviteService;
-import Project.Teaming.Member.Entity.Member;
-import Project.Teaming.Member.Interface.MemberRepository;
+import Project.Teaming.invite.Dto.AcceptInviteRequestDto;
+import Project.Teaming.invite.Dto.InviteRequestDto;
+import Project.Teaming.invite.Dto.InviteResponseDto;
+import Project.Teaming.invite.Mapper.InviteMapper;
+import Project.Teaming.invite.Service.InviteService;
+import Project.Teaming.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

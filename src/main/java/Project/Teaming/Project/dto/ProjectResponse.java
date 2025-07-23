@@ -1,6 +1,6 @@
-package Project.Teaming.Project.dto;
+package Project.Teaming.project.dto;
 
-import Project.Teaming.Project.Entity.Project;
+import Project.Teaming.project.entity.Project;
 
 public record ProjectResponse(
         String title, //Id

@@ -1,6 +1,6 @@
-package Project.Teaming.Project.Entity;
+package Project.Teaming.project.entity;
 
-import Project.Teaming.Member.Entity.Member;
+import Project.Teaming.member.entity.Member;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

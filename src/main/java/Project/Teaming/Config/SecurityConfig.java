@@ -1,6 +1,6 @@
-package Project.Teaming.Config;
+package Project.Teaming.config;
 
-import Project.Teaming.JWT.JwtAuthenticationFilter;
+import Project.Teaming.member.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

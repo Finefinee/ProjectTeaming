@@ -1,4 +1,4 @@
-package Project.Teaming.JWT;
+package Project.Teaming.member.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
