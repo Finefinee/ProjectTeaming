@@ -4,110 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="fix: lowercase package name">
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="chore: JwtAuthenticationFilter에 @NonNull 추가">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Project/teaming/invite/repository/InviteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Config/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Controller/InviteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Dto/AcceptInviteRequestDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Dto/InviteRequestDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Dto/InviteResponseDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Entity/Invite$InviteBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Entity/Invite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Exception/AlreadyProjectMemberException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Exception/InviteNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Exception/NotInviteOwnerException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Mapper/InviteMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Repository/InviteRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Service/Impl/InviteServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Invite/Service/InviteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Member/Controller/MemberController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Member/Entity/Member$MemberBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Member/Entity/Member$MemberBuilderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Member/Entity/Member.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Member/Exception/MemberNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Member/Service/MemberService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/Controller/ProjectController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/Entity/Project$ProjectBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/Entity/Project$ProjectBuilderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/Entity/Project.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/Exception/ProjectNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/Interface/ProjectRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/Service/ProjectService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/dto/CreateProjectRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/dto/DeleteProjectRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/dto/ProjectResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/Project/dto/UpdateProject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/TeamingApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/dto/CreateTokenRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/dto/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/dto/LoginResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/dto/SignUpRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/jwt/JwtAuthenticationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/jwt/JwtProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/jwt/MemberDetail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/jwt/MemberDetailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Project/Teaming/member/repository/MemberRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ProjectController.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ProjectService.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Controller1/InviteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/controller/InviteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Dto1/AcceptInviteRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/dto/AcceptInviteRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Dto1/InviteRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/dto/InviteRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Dto1/InviteResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/dto/InviteResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Entity1/Invite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/entity/Invite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Exception1/AlreadyProjectMemberException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/exception/AlreadyProjectMemberException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Exception1/InviteNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/exception/InviteNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Exception1/NotInviteOwnerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/exception/NotInviteOwnerException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Mapper1/InviteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/mapper/InviteMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Repository1/InviteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/repository/InviteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Service1/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Invite1/Service1/InviteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/invite/service/InviteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/Controller1/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/Entity1/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/Exception1/MemberNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/exception/MemberNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/Service1/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/dto1/CreateTokenRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/dto/CreateTokenRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/dto1/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/dto1/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/dto/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/dto1/SignUpRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/jwt1/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/jwt/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/jwt1/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/jwt/JwtProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/jwt1/MemberDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/jwt/MemberDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/jwt1/MemberDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/jwt/MemberDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Member1/repository1/MemberRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/Controller1/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/Entity1/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/entity/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/Exception1/ProjectNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/exception/ProjectNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/Interface1/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/repository/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/Service1/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/dto1/CreateProjectRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/dto/CreateProjectRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/dto1/DeleteProjectRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/dto/DeleteProjectRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/dto1/ProjectResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/dto/ProjectResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/Project1/dto1/UpdateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/project/dto/UpdateProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/TeamingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/TeamingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/config1/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/config/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/config1/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/dto/CreateTokenRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/dto/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/dto/LoginResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/dto/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/dto/SignUpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/jwt/JwtAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/jwt/JwtProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/jwt/MemberDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/jwt/MemberDetailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Project/Teaming/member/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1/Teaming1/member/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Project/Teaming/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Project1/Teaming1/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Project/Teaming/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Project1/Teaming1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Project/Teaming/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Project1/Teaming1/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Project/Teaming/Teaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Project1/Teaming1/Teaming.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Project/Teaming/TeamingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Project1/Teaming1/TeamingApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/dto/AcceptInviteRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/dto/AcceptInviteRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,13 +52,14 @@
       <list>
         <option value="Exception" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="invite4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -164,13 +76,15 @@
     &quot;accountId&quot;: &quot;5f664c88-a191-452f-aca9-6b6f1abc0885&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2zg0GhZEui64yrIYqnBazpIG7RX" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
@@ -193,10 +107,29 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.postfix.templates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" />
+        <option name="reportGuid" value="fbe3e333-1035-40c3-9865-45751a756033" />
+        <option name="reportName" value="Teaming/qodana/2025-07-23" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="0c4bc16e-9e81-4a0a-935a-1c82db07a4cc" reportId="Teaming/qodana/2025-07-23" />
+      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" reportGuid="fbe3e333-1035-40c3-9865-45751a756033" reportId="Teaming/qodana/2025-07-23" />
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="TeamingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="ms-17" />
@@ -348,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753274148068</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="chore: JwtAuthenticationFilter에 @NonNull 추가">
+      <option name="closed" value="true" />
+      <created>1753275034850</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1753275034850</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +310,7 @@
     <MESSAGE value="chore: edit invite dtos" />
     <MESSAGE value="chore: add builder" />
     <MESSAGE value="fix: lowercase package name" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: lowercase package name" />
+    <MESSAGE value="chore: JwtAuthenticationFilter에 @NonNull 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: JwtAuthenticationFilter에 @NonNull 추가" />
   </component>
 </project>
