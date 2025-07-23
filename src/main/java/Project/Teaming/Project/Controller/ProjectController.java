@@ -6,9 +6,11 @@ import Project.Teaming.project.dto.DeleteProjectRequest;
 import Project.Teaming.project.dto.UpdateProject;
 import Project.Teaming.project.dto.ProjectResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/post")
@@ -19,19 +21,22 @@ public class ProjectController {
     private final ProjectService projectService;
 
     @PostMapping
-    public void createProject(@RequestBody CreateProjectRequest request) {
+    public ResponseEntity<?> createProject(@RequestBody CreateProjectRequest request) {
         projectService.createProject(request);
+        return ResponseEntity.ok(Map.of("message", "프로젝트가 생성되었습니다."));
     }
 
     @DeleteMapping
-    public void deleteProject(@RequestBody DeleteProjectRequest request) {
+    public ResponseEntity<?> deleteProject(@RequestBody DeleteProjectRequest request) {
         projectService.deleteProject(request);
+        return ResponseEntity.ok(Map.of("message", "프로젝트가 삭제되었습니다."));
     }
 
 
     @PatchMapping()
-    public ProjectResponse updateProject (@RequestBody UpdateProject request) {
-        return projectService.updateProject(request);
+    public ResponseEntity<?> updateProject (@RequestBody UpdateProject request) {
+        projectService.updateProject(request);
+        return ResponseEntity.ok(Map.of("message", "업데이트가 완료되었습니다."));
     }
 
     @GetMapping()
