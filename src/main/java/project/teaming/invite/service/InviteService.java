@@ -3,7 +3,6 @@ package project.teaming.invite.service;
 import project.teaming.invite.dto.AcceptInviteRequestDto;
 import project.teaming.invite.dto.InviteRequestDto;
 import project.teaming.invite.entity.Invite;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
