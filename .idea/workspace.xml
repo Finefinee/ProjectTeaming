@@ -6,19 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="chore: JwtAuthenticationFilter에 @NonNull 추가">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Project/teaming/invite/repository/InviteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/repository/InviteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ProjectController.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ProjectService.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/dto/AcceptInviteRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/dto/AcceptInviteRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +90,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.ProjectTeaming 빌드.executor": "Run",
+    "Gradle.ProjectTeaming-103commit 빌드.executor": "Run",
     "Gradle.ProjectTeaming-fixpackage 빌드.executor": "Run",
     "Gradle.ProjectTeaming-main-CRUDfixed 빌드.executor": "Run",
     "Gradle.ProjectTeaming-merge#24 빌드.executor": "Run",
@@ -99,9 +100,10 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.TeamingApplication.executor": "Run",
     "Spring Boot.이름이 지정되지 않았습니다.executor": "Run",
-    "git-widget-placeholder": "fixpackage",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,18 +114,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" />
-        <option name="reportGuid" value="fbe3e333-1035-40c3-9865-45751a756033" />
-        <option name="reportName" value="Teaming/qodana/2025-07-23" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
       <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="0c4bc16e-9e81-4a0a-935a-1c82db07a4cc" reportId="Teaming/qodana/2025-07-23" />
@@ -132,16 +122,14 @@
   </component>
   <component name="RunManager">
     <configuration name="TeamingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="ms-17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="Teaming.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Project1.Teaming1.TeamingApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="project.teaming.TeamingApplication" />
       <extension name="net.ashald.envfile">
         <option name="IS_ENABLED" value="true" />
         <option name="IS_SUBST" value="true" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="true" />
+        <option name="IS_IGNORE_MISSING_FILES" value="true" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="true" />
         <ENTRIES>
           <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
           <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH=".env" />
@@ -184,6 +172,7 @@
       <workItem from="1753093707406" duration="3067000" />
       <workItem from="1753230240112" duration="7839000" />
       <workItem from="1753273974910" duration="512000" />
+      <workItem from="1753532060385" duration="826000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
