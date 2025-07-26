@@ -55,12 +55,12 @@
     &quot;assignee&quot;: &quot;Finefinee&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Finefinee/ProjectTeaming.git&quot;,
-    &quot;accountId&quot;: &quot;5f664c88-a191-452f-aca9-6b6f1abc0885&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Finefinee/ProjectTeaming",
+    "accountId": "ea93a059-51f0-467a-968f-3dec1136d1ba"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -89,7 +89,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.TeamingApplication.executor": "Run",
     "Spring Boot.이름이 지정되지 않았습니다.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "login__signup",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -161,6 +161,7 @@
       <workItem from="1753273974910" duration="512000" />
       <workItem from="1753532060385" duration="826000" />
       <workItem from="1753541996517" duration="811000" />
+      <workItem from="1753542817916" duration="1178000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
