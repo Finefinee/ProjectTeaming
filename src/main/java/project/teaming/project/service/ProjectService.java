@@ -47,10 +47,11 @@ public class ProjectService {
         projectRepository.save(project);
 
         return new ProjectResponse(
-              request.title(),
-              request.content(),
-                member.getUsername(),
-                member.getUsername()
+                project.getId(),      // id
+                request.title(),      // title
+                request.content(),    // content
+                member.getUsername(), // projectManager
+                member.getUsername()  // projectMember
         );
     }
     public ResponseEntity<?> deleteProject(DeleteProjectRequest request) {
@@ -66,19 +67,15 @@ public class ProjectService {
         Project project = projectRepository.findById(request.id())
                 .orElseThrow(() -> new IllegalArgumentException("프로젝트를 찾을 수 없습니다."));
 
-            project.setTitle(request.title());
-            project.setContent(request.content());
-            project.setProjectManager(request.projectManager());
+        project.setTitle(request.title());
+        project.setContent(request.content());
+        project.setProjectManager(request.projectManager());
 
-            projectRepository.save(project);
-            return ProjectResponse.of(project);
+        projectRepository.save(project);
+        return ProjectResponse.of(project);
     }
 
     public List<ProjectResponse> findAll() {
         return projectRepository.findAll().stream().map(ProjectResponse::of).collect(Collectors.toList());
-    }
-
-    public List<String> getAllNames() {
-        return memberRepository.findAllNames();
     }
 }
