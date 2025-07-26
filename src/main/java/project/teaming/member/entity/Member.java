@@ -16,17 +16,19 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-//    @Column(unique = true, length = 25)
+    @Column(unique = true, length = 25)
     private String username; // 사용자명(아이디)
 
-//    @Column(length = 4)
+    @Column(length = 4)
     private String name; // 실명
 
-//    @Column(length = 16)
+    @Column(length = 100)
     private String password; //비밀번호
 
+    @Column(unique = true)
     private String email; // 이메일
 
+    @Column(unique = true, length = 4)
     private int class_code; // 학번
 
     private String role; //권한
