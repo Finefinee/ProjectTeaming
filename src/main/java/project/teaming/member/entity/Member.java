@@ -27,7 +27,7 @@ public class Member {
 
     private String email; // 이메일
 
-    private int class_code; // 학번
+    private String  classCode; // 학번
 
     private String role; //권한
 }
