@@ -5,6 +5,6 @@ public record SignUpRequest(
         String name,
         String password,
         String email,
-        String class_code
+        String classCode
 ) {
 }

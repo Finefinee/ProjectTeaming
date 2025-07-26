@@ -38,19 +38,19 @@ public class MemberService {
             return ResponseEntity.badRequest().body(Map.of("email_error", "해당 이메일로 가입된 계정이 있습니다."));
         }
         // 학번 중복 체크
-        if (memberRepository.existsByClassCode(request.class_code())) {
+        if (memberRepository.existsByClassCode(request.classCode())) {
             return ResponseEntity.badRequest().body(Map.of("classcode_error", "이미 사용중인 학번입니다."));
         }
 
 
 
-            // 검증 통과 후 회원가입 절차
+        // 검증 통과 후 회원가입 절차
         Member member = Member.builder()
                 .name(request.name())
                 .username(request.username())
                 .password(passwordEncoder.encode(rawPassword))
                 .email(request.email())
-                .classCode(request.class_code())
+                .classCode(request.classCode())
                 .role("ROLE_USER") // 일단 일반 유저들 가입할 땐 무조건 USER로, 나중에 관리자 계정만들때는 ROLE_ADMIN으로 고쳐서 잠깐 하면 됨
                 .build();
         memberRepository.save(member);
@@ -115,7 +115,7 @@ public class MemberService {
             }
 
             /** 번호(최소 0, 최대 2)
-            * 01번 부터 최대 29번 까지
+             * 01번 부터 최대 29번 까지
              **/
             if (ten > 2) {
                 return false;
@@ -130,3 +130,4 @@ public class MemberService {
         }
     }
 }
+
