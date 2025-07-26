@@ -1,5 +1,6 @@
 package project.teaming.config;
 
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import project.teaming.member.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -31,9 +32,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http
-                .httpBasic(h -> h.disable())
-                .formLogin(f -> f.disable())
-                .csrf(c -> c.disable())
+                .httpBasic(AbstractHttpConfigurer::disable)
+                .formLogin(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Token쓰기위해 Session끔
                 .authorizeHttpRequests(auth -> auth
