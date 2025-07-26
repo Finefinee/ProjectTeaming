@@ -41,9 +41,7 @@ public class JwtProvider {
         return Jwts
                 .builder()
                 .subject(request.username())
-
                 .claim("name", request.name())
-                .claim("email", request.email())
                 .claim("class_code", request.class_code())
 //                .claim("role", request.role())
 
