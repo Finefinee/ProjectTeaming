@@ -29,7 +29,6 @@ public class MemberService {
         if (!isValidPassword(rawPassword)) {
             return ResponseEntity.badRequest().body(Map.of("error", "비밀번호는 최소 8자 이상이며, 영문자, 숫자, 특수문자를 포함해야 합니다."));
         }
-
             // 검증 통과 후 회원가입 절차
         Member member = Member.builder()
                 .name(request.name())
@@ -40,14 +39,16 @@ public class MemberService {
                 .role("ROLE_USER")
                 .build();
         memberRepository.save(member);
-
+        
         CreateTokenRequest tokenRequest = new CreateTokenRequest(
                 member.getUsername(),
                 member.getName(),
+                member.getEmail(),
                 member.getClass_code()
         );
         String token = jwtProvider.createToken(tokenRequest);
-        return ResponseEntity.ok(Map.of("token", token));
+        return ResponseEntity.ok(Map.of("message", "회원가입이 완료되었습니다.",
+                "token", token));
     }
 
     // 로그인
@@ -57,10 +58,10 @@ public class MemberService {
         if (!passwordEncoder.matches(request.password(), member.getPassword())) {
             throw new IllegalArgumentException("사용자명 혹은 비밀번호가 잘못되었습니다.");
         }
-
         CreateTokenRequest tokenRequest = new CreateTokenRequest(
                 member.getUsername(),
                 member.getName(),
+                member.getEmail(),
                 member.getClass_code()
         );
         String token = jwtProvider.createToken(tokenRequest);

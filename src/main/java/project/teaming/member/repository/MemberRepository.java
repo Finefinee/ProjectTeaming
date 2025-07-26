@@ -1,8 +1,10 @@
 package project.teaming.member.repository;
 
+import org.springframework.data.jpa.repository.Query;
 import project.teaming.member.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface MemberRepository extends JpaRepository<Member, Integer> {
@@ -10,4 +12,7 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     Optional<Member> findById(int id);
 
     Optional<Member> findByUsername(String username);
+
+    @Query("SELECT m.name FROM Member m")
+    List<String> findAllNames();
 }

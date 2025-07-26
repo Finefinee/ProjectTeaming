@@ -5,6 +5,7 @@ import project.teaming.invite.dto.InviteRequestDto;
 import project.teaming.invite.dto.InviteResponseDto;
 import project.teaming.invite.mapper.InviteMapper;
 import project.teaming.invite.service.InviteService;
+import project.teaming.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -20,6 +21,7 @@ import java.util.List;
 public class InviteController {
 
     private final InviteService inviteService;
+    private final MemberRepository memberRepository;
 
     // 1. 초대 보내기 (POST /invites)
     @PostMapping
