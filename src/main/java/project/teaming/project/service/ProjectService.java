@@ -15,6 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import org.springframework.security.access.AccessDeniedException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -47,34 +48,48 @@ public class ProjectService {
         projectRepository.save(project);
 
         return new ProjectResponse(
-              request.title(),
-              request.content(),
+                request.title(),
+                request.content(),
                 member.getUsername(),
                 member.getUsername()
         );
     }
+
     public ResponseEntity<?> deleteProject(DeleteProjectRequest request) {
         Project project = projectRepository.findById(request.id())
                 .orElseThrow(() -> new RuntimeException("프로젝트를 찾을 수 없습니다."));
+
+        verifyProjectManager(project);
 
         projectRepository.delete(project);
         return ResponseEntity.ok(Map.of("message", "프로젝트가 삭제되었습니다."));
     }
 
-    public ProjectResponse  updateProject(UpdateProject request) {
+    public ProjectResponse updateProject(UpdateProject request) {
 //        Project e = projectRepository.findById(request.id()).orElse(null);
         Project project = projectRepository.findById(request.id())
                 .orElseThrow(() -> new IllegalArgumentException("프로젝트를 찾을 수 없습니다."));
 
-            project.setTitle(request.title());
-            project.setContent(request.content());
-            project.setProjectManager(request.projectManager());
+        verifyProjectManager(project);
 
-            projectRepository.save(project);
-            return ProjectResponse.of(project);
+
+        project.setTitle(request.title());
+        project.setContent(request.content());
+        project.setProjectManager(request.projectManager());
+
+
+        projectRepository.save(project);
+        return ProjectResponse.of(project);
     }
 
     public List<ProjectResponse> findAll() {
         return projectRepository.findAll().stream().map(ProjectResponse::of).collect(Collectors.toList());
+    }
+
+    public void verifyProjectManager(Project project) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (!project.getProjectManager().equals(auth.getName())) {
+            throw new AccessDeniedException("당신은 프로젝트 매니저가 아닙니다.");
+        }
     }
 }

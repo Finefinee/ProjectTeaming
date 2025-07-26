@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/post")
+@RequestMapping("/project")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 
@@ -39,9 +39,8 @@ public class ProjectController {
         return ResponseEntity.ok(Map.of("message", "업데이트가 완료되었습니다."));
     }
 
-    @GetMapping()
+    @GetMapping("/getProject")
     public List<ProjectResponse> findAll() {
         return projectService.findAll();
     }
-
 }
