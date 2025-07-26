@@ -1,5 +1,6 @@
 package project.teaming.project.controller;
 
+import project.teaming.member.service.MemberService;
 import project.teaming.project.service.ProjectService;
 import project.teaming.project.dto.CreateProjectRequest;
 import project.teaming.project.dto.DeleteProjectRequest;
@@ -38,9 +39,13 @@ public class ProjectController {
         projectService.updateProject(request);
         return ResponseEntity.ok(Map.of("message", "업데이트가 완료되었습니다."));
     }
-
+    @GetMapping()
+    public List<String> getAllNames() {
+        return projectService.getAllNames();
+    }
     @GetMapping("/getProject")
     public List<ProjectResponse> findAll() {
         return projectService.findAll();
     }
+
 }

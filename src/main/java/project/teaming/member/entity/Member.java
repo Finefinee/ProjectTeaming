@@ -29,7 +29,7 @@ public class Member {
     private String email; // 이메일
 
     @Column(unique = true, length = 4)
-    private String class_code; // 학번, int -> String 으로
+    private int class_code; // 학번
 
     private String role; //권한
 }
