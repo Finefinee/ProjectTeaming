@@ -15,4 +15,8 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
 
     @Query("SELECT m.name FROM Member m")
     List<String> findAllNames();
+
+    boolean existsByUsername(String username);
+    boolean existsByEmail(String email);
+    boolean existsByClassCode(String classCode);
 }

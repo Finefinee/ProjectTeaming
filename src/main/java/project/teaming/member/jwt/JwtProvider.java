@@ -43,8 +43,7 @@ public class JwtProvider {
                 .subject(request.username())
 
                 .claim("name", request.name())
-                .claim("email", request.email())
-                .claim("class_code", request.class_code())
+                .claim("classCode", request.classCode())
 //                .claim("role", request.role())
 
                 .issuedAt(now) // 현재 시간

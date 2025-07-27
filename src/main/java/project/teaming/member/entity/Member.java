@@ -28,8 +28,8 @@ public class Member {
     @Column(unique = true)
     private String email; // 이메일
 
-    @Column(unique = true, length = 4)
-    private int class_code; // 학번
+    @Column(unique = true)
+    private String  classCode; // 학번
 
     private String role; //권한
 }
