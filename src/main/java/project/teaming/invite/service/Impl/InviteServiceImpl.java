@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import project.teaming.invite.dto.AcceptInviteRequestDto;
 import project.teaming.invite.dto.InviteRequestDto;
 import project.teaming.invite.entity.Invite;
-import project.teaming.invite.exception.AlreadyProjectMemberException;
 import project.teaming.invite.exception.InviteNotFoundException;
 import project.teaming.invite.exception.NotInviteOwnerException;
 import project.teaming.invite.repository.InviteRepository;
@@ -22,6 +21,7 @@ import project.teaming.project.repository.ProjectRepository;
 import project.teaming.project.service.ProjectService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -63,21 +63,16 @@ public class InviteServiceImpl implements InviteService {
                 .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
 
         // 2. 초대 수락 자격 확인 (본인만 수락 가능)
-        inviteValidator.validateInvitee(invite, userDetails.getUsername());
+        Member projectMember = inviteValidator.validateInvitee(invite, userDetails.getUsername());
+
+        Project project = invite.getProject();
 
         // 3. 초대 수락 처리
         invite.accept();
 
-        // 4. 프로젝트 팀원으로 등록 (중복 등록 방지)
-        Project project = invite.getProject();
-        Member projectMember = invite.getProjectMember();
-        if (project.getProjectMember().contains(projectMember)) {
-            throw new AlreadyProjectMemberException("이미 프로젝트의 멤버입니다.");
-        }
-
         project.addMember(projectMember);
 
-        // 5. 저장
+        // 4. 저장
         inviteRepository.save(invite);
         projectRepository.save(project);
     }
@@ -103,5 +98,12 @@ public class InviteServiceImpl implements InviteService {
         return inviteRepository.findAll().stream()
             .filter(invite -> invite.getProjectMember().getUsername().equals(userDetails.getUsername()))
             .collect(Collectors.toList());
+    }
+
+    @Override
+    public Invite getInviteById(UserDetails userDetails, Long id) {
+
+        return inviteRepository.findById(id)
+                .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
     }
 }

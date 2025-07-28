@@ -3,6 +3,7 @@ package project.teaming.invite.utils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import project.teaming.invite.entity.Invite;
+import project.teaming.invite.exception.AlreadyProjectMemberException;
 import project.teaming.invite.exception.NotInviteOwnerException;
 import project.teaming.member.entity.Member;
 import project.teaming.member.repository.MemberRepository;
@@ -35,6 +36,12 @@ public class InviteValidator {
     public Member validateInvitee(Invite invite, String username) {
         if (!invite.getProjectMember().getUsername().equals(username)) {
             throw new NotInviteOwnerException("본인만 초대를 수락하거나 거절할 수 있습니다.");
+        }
+
+        Project project = invite.getProject();
+        Member projectMember = invite.getProjectMember();
+        if (project.getProjectMember().contains(projectMember)) {
+            throw new AlreadyProjectMemberException("이미 프로젝트의 멤버입니다.");
         }
 
         return memberService.findMemberByUsername(username);
