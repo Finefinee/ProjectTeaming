@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="refactor: clean code">
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: findMemberByUsername, findProjectById">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/entity/Invite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/entity/Invite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/entity/Project.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,13 +105,21 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="13238112-fe89-44b0-a66e-f465b71c2cf5" />
+        <option name="reportName" value="Teaming/qodana/2025-07-28" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
   <component name="QodanaIsSelectedPersistenceService">
     <option name="selectedOrLoading" value="true" />
   </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="0c4bc16e-9e81-4a0a-935a-1c82db07a4cc" reportId="Teaming/qodana/2025-07-23" />
-      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" reportGuid="fbe3e333-1035-40c3-9865-45751a756033" reportId="Teaming/qodana/2025-07-23" />
+      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="13238112-fe89-44b0-a66e-f465b71c2cf5" reportId="Teaming/qodana/2025-07-28" />
     </option>
   </component>
   <component name="RunManager">
@@ -168,7 +175,7 @@
       <workItem from="1753230240112" duration="7839000" />
       <workItem from="1753273974910" duration="512000" />
       <workItem from="1753532060385" duration="826000" />
-      <workItem from="1753677734496" duration="4623000" />
+      <workItem from="1753677734496" duration="5819000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -298,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753680525603</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: findMemberByUsername, findProjectById">
+      <option name="closed" value="true" />
+      <created>1753682512790</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1753682512790</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +349,11 @@
     <MESSAGE value="improve security" />
     <MESSAGE value="feat: InviteGenerator, InviteValidator" />
     <MESSAGE value="refactor: clean code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: clean code" />
+    <MESSAGE value="feat: findMemberByUsername, findProjectById" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: findMemberByUsername, findProjectById" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

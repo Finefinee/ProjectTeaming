@@ -1,15 +1,12 @@
 package project.teaming.invite.entity;
 
+import lombok.*;
 import project.teaming.member.entity.Member;
 import project.teaming.project.entity.Project;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Data
+@Getter
 @Table(name = "Invites")
 @NoArgsConstructor
 @AllArgsConstructor

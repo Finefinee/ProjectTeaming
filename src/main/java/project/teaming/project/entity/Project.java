@@ -1,5 +1,6 @@
 package project.teaming.project.entity;
 
+import lombok.Getter;
 import project.teaming.member.entity.Member;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
 @SuperBuilder
 @NoArgsConstructor
 public class Project {
