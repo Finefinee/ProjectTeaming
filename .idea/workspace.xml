@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="fix: remove @Data">
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/config/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/controller/InviteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/controller/InviteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/entity/Invite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/entity/Invite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/repository/InviteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/repository/InviteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/InviteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/InviteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/jwt/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/jwt/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/jwt/MemberDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/jwt/MemberDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/jwt/MemberDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/jwt/MemberDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/entity/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/repository/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/teaming/TeamingApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +65,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -123,8 +106,8 @@
   <component name="QodanaHighlightedReportService">
     <option name="localRunNotPublishedPersistedInfo">
       <LocalReportPersistedInfo>
-        <option name="path" value="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" />
-        <option name="reportGuid" value="13238112-fe89-44b0-a66e-f465b71c2cf5" />
+        <option name="path" value="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" />
+        <option name="reportGuid" value="592cc09a-a130-47a7-8624-01a70043cb54" />
         <option name="reportName" value="Teaming/qodana/2025-07-28" />
       </LocalReportPersistedInfo>
     </option>
@@ -134,6 +117,7 @@
   </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" reportGuid="592cc09a-a130-47a7-8624-01a70043cb54" reportId="Teaming/qodana/2025-07-28" />
       <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="13238112-fe89-44b0-a66e-f465b71c2cf5" reportId="Teaming/qodana/2025-07-28" />
     </option>
   </component>
@@ -190,7 +174,7 @@
       <workItem from="1753230240112" duration="7839000" />
       <workItem from="1753273974910" duration="512000" />
       <workItem from="1753532060385" duration="826000" />
-      <workItem from="1753677734496" duration="6149000" />
+      <workItem from="1753677734496" duration="8665000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -336,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753683681403</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix: remove @Data">
+      <option name="closed" value="true" />
+      <created>1753684304380</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1753684304380</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
