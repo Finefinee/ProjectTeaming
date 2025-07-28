@@ -8,11 +8,7 @@ import project.teaming.project.entity.Project;
 @Component
 public class InviteGenerator {
     public Invite create(Member manager, Member invitee, Project project) {
-        Invite invite = new Invite();
-        invite.setProjectManager(manager);
-        invite.setProjectMember(invitee);
-        invite.setProject(project);
-        invite.setAccepted(false);
+        Invite invite = new Invite(manager, invitee, project);
         return invite;
     }
 }

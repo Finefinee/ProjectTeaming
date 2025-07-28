@@ -51,6 +51,7 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://localhost:3000"); // 프론트엔드 포트
+        config.addAllowedOrigin("http://localhost:5174"); // 프론트엔드 포트
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 

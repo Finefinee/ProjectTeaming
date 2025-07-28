@@ -56,7 +56,7 @@ public class ProjectService {
     }
     public ResponseEntity<?> deleteProject(DeleteProjectRequest request) {
         Project project = projectRepository.findById(request.id())
-                .orElseThrow(() -> new RuntimeException("프로젝트를 찾을 수 없습니다."));
+                .orElseThrow(() -> new ProjectNotFoundException("프로젝트를 찾을 수 없습니다."));
 
         projectRepository.delete(project);
         return ResponseEntity.ok(Map.of("message", "프로젝트가 삭제되었습니다."));

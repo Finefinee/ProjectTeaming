@@ -37,4 +37,11 @@ public class Invite {
     public void accept() {
         this.accepted = true;
     }
+
+    public Invite(Member projectManager, Member projectMember, Project project) {
+        this.projectManager = projectManager;
+        this.projectMember = projectMember;
+        this.project = project;
+        this.accepted = false;
+    }
 }
