@@ -38,31 +38,20 @@ public class InviteServiceImpl implements InviteService {
     @Override
     @Transactional
     public void sendInvite(UserDetails userDetails, InviteRequestDto inviteRequestDto) {
-        // 1. 프로젝트 팀장(로그인 유저) 조회
-        Member projectManager = memberRepository.findByUsername(userDetails.getUsername())
-                .orElseThrow(() -> new MemberNotFoundException("프로젝트 팀장 없음"));
 
-        if (!Objects.equals(userDetails.getUsername(), projectRepository.findById(inviteRequestDto.projectId())
-                .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"))
-                .getProjectManager())
-        ) {
-            throw new NotInviteOwnerException("프로젝트 팀장만 초대할 수 있습니다.");
-        }
+        inviteValidator.validateInviter(userDetails.getUsername(), inviteRequestDto.projectId());
+
+        // 1. 초대 대상 멤버 유효성 검사
+        Member projectManager = inviteValidator.findMemberByUsername(userDetails.getUsername());
 
         // 2. 초대받을 멤버 조회
-        Member projectMember = memberRepository.findByUsername(inviteRequestDto.projectMemberUsername())
-                .orElseThrow(() -> new MemberNotFoundException("프로젝트 멤버(초대 대상) 없음"));
+        Member projectMember = inviteValidator.findMemberByUsername(inviteRequestDto.projectMemberUsername());
 
         // 3. 프로젝트 조회
-        Project project = projectRepository.findById(inviteRequestDto.projectId())
-                .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"));
+        Project project = inviteValidator.findProjectById(inviteRequestDto.projectId());
 
         // 4. 초대 객체 생성 및 저장
-        Invite invite = new Invite();
-        invite.setProjectManager(projectManager);
-        invite.setProjectMember(projectMember);
-        invite.setProject(project);
-        invite.setAccepted(false);
+        Invite invite = inviteGenerator.create(projectManager, projectMember, project);
 
         inviteRepository.save(invite);
     }
@@ -75,10 +64,7 @@ public class InviteServiceImpl implements InviteService {
                 .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
 
         // 2. 초대 수락 자격 확인 (본인만 수락 가능)
-        String username = userDetails.getUsername();
-        if (!invite.getProjectMember().getUsername().equals(username)) {
-            throw new NotInviteOwnerException("본인만 초대를 수락할 수 있습니다.");
-        }
+        inviteValidator.validateInvitee(invite, userDetails.getUsername());
 
         // 3. 초대 수락 처리
         invite.setAccepted(true);

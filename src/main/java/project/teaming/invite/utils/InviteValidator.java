@@ -18,7 +18,7 @@ public class InviteValidator {
     private final ProjectRepository projectRepository;
     private final MemberRepository memberRepository;
 
-    public void validateInviteAuthority(String username, Integer projectId) {
+    public void validateInviter(String username, Integer projectId) {
         Project project = projectRepository.findById(projectId)
                 .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"));
 

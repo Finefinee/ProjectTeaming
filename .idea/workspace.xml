@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="improve security">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/invite/service/Impl/InviteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/invite/service/Impl/InviteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/invite/service/InviteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/invite/service/InviteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/member/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/member/service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: InviteGenerator, InviteValidator">
       <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +161,7 @@
       <workItem from="1753230240112" duration="7839000" />
       <workItem from="1753273974910" duration="512000" />
       <workItem from="1753532060385" duration="826000" />
-      <workItem from="1753677734496" duration="1998000" />
+      <workItem from="1753677734496" duration="2369000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -290,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753678436319</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: InviteGenerator, InviteValidator">
+      <option name="closed" value="true" />
+      <created>1753679913501</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1753679913501</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +306,7 @@
     <MESSAGE value="fix: lowercase package name" />
     <MESSAGE value="chore: JwtAuthenticationFilter에 @NonNull 추가" />
     <MESSAGE value="improve security" />
-    <option name="LAST_COMMIT_MESSAGE" value="improve security" />
+    <MESSAGE value="feat: InviteGenerator, InviteValidator" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: InviteGenerator, InviteValidator" />
   </component>
 </project>
