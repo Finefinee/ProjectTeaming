@@ -13,6 +13,7 @@ import project.teaming.invite.utils.InviteValidator;
 import project.teaming.member.entity.Member;
 import project.teaming.member.exception.MemberNotFoundException;
 import project.teaming.member.repository.MemberRepository;
+import project.teaming.member.service.MemberService;
 import project.teaming.project.entity.Project;
 import project.teaming.project.exception.ProjectNotFoundException;
 import project.teaming.project.repository.ProjectRepository;
@@ -20,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import project.teaming.project.service.ProjectService;
 
 import java.util.List;
 import java.util.Objects;
@@ -34,21 +36,21 @@ public class InviteServiceImpl implements InviteService {
     private final ProjectRepository projectRepository;
     private final InviteGenerator inviteGenerator;
     private final InviteValidator inviteValidator;
+    private final MemberService memberService;
+    private final ProjectService projectService;
 
     @Override
     @Transactional
     public void sendInvite(UserDetails userDetails, InviteRequestDto inviteRequestDto) {
 
-        inviteValidator.validateInviter(userDetails.getUsername(), inviteRequestDto.projectId());
-
-        // 1. 초대 대상 멤버 유효성 검사
-        Member projectManager = inviteValidator.findMemberByUsername(userDetails.getUsername());
+        // 1. 초대하는 멤버가 프로젝트 팀장인지 확인
+        Member projectManager = inviteValidator.validateInviter(userDetails.getUsername(), inviteRequestDto.projectId());
 
         // 2. 초대받을 멤버 조회
-        Member projectMember = inviteValidator.findMemberByUsername(inviteRequestDto.projectMemberUsername());
+        Member projectMember = memberService.findMemberByUsername(inviteRequestDto.projectMemberUsername());
 
         // 3. 프로젝트 조회
-        Project project = inviteValidator.findProjectById(inviteRequestDto.projectId());
+        Project project = projectService.findProjectById(inviteRequestDto.projectId());
 
         // 4. 초대 객체 생성 및 저장
         Invite invite = inviteGenerator.create(projectManager, projectMember, project);

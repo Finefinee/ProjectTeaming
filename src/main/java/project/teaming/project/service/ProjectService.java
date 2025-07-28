@@ -3,6 +3,7 @@ package project.teaming.project.service;
 import project.teaming.member.entity.Member;
 import project.teaming.member.repository.MemberRepository;
 import project.teaming.project.entity.Project;
+import project.teaming.project.exception.ProjectNotFoundException;
 import project.teaming.project.repository.ProjectRepository;
 import project.teaming.project.dto.CreateProjectRequest;
 import project.teaming.project.dto.DeleteProjectRequest;
@@ -61,7 +62,7 @@ public class ProjectService {
         return ResponseEntity.ok(Map.of("message", "프로젝트가 삭제되었습니다."));
     }
 
-    public ProjectResponse  updateProject(UpdateProject request) {
+    public ProjectResponse updateProject(UpdateProject request) {
 //        Project e = projectRepository.findById(request.id()).orElse(null);
         Project project = projectRepository.findById(request.id())
                 .orElseThrow(() -> new IllegalArgumentException("프로젝트를 찾을 수 없습니다."));
@@ -80,5 +81,10 @@ public class ProjectService {
 
     public List<String> getAllNames() {
         return memberRepository.findAllNames();
+    }
+
+    public Project findProjectById(Integer id) {
+        return projectRepository.findById(id)
+                .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"));
     }
 }

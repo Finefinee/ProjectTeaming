@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: InviteGenerator, InviteValidator">
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="refactor: clean code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +68,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -98,10 +102,13 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.postfix.templates",
+    "settings.editor.selected.configurable": "settings.qodana",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
       <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="0c4bc16e-9e81-4a0a-935a-1c82db07a4cc" reportId="Teaming/qodana/2025-07-23" />
@@ -161,7 +168,7 @@
       <workItem from="1753230240112" duration="7839000" />
       <workItem from="1753273974910" duration="512000" />
       <workItem from="1753532060385" duration="826000" />
-      <workItem from="1753677734496" duration="2369000" />
+      <workItem from="1753677734496" duration="4623000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -283,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753679913501</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="refactor: clean code">
+      <option name="closed" value="true" />
+      <created>1753680525603</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1753680525603</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +306,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="GlobalExceptionHandler -&gt; in Config package" />
@@ -307,6 +333,7 @@
     <MESSAGE value="chore: JwtAuthenticationFilter에 @NonNull 추가" />
     <MESSAGE value="improve security" />
     <MESSAGE value="feat: InviteGenerator, InviteValidator" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: InviteGenerator, InviteValidator" />
+    <MESSAGE value="refactor: clean code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: clean code" />
   </component>
 </project>
