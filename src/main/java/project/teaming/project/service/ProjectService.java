@@ -48,10 +48,11 @@ public class ProjectService {
         projectRepository.save(project);
 
         return new ProjectResponse(
+              project.getId(),
               request.title(),
               request.content(),
-                member.getUsername(),
-                member.getUsername()
+              member.getUsername(),
+              member.getUsername()
         );
     }
     public ResponseEntity<?> deleteProject(DeleteProjectRequest request) {

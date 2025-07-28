@@ -6,6 +6,7 @@ import project.teaming.project.entity.Project;
 import java.util.stream.Collectors;
 
 public record ProjectResponse(
+        Integer id,
         String title,
         String content,
         String projectManager,
@@ -17,6 +18,7 @@ public record ProjectResponse(
                 .collect(Collectors.joining(", "));
 
         return new ProjectResponse(
+                project.getId(),
                 project.getTitle(),
                 project.getContent(),
                 project.getProjectManager(),
