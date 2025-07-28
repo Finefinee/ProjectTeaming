@@ -4,13 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: handle IllegalArgumentException">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="fix: allow port 5174">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/entity/Invite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/entity/Invite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/config/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/config/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/invite/entity/Invite.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/invite/entity/Invite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/invite/service/Impl/InviteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/invite/service/Impl/InviteServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/member/entity/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/member/entity/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/member/jwt/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/member/jwt/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/member/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/member/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/controller/ProjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/controller/ProjectController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/entity/Project$ProjectBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/entity/Project$ProjectBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/entity/Project$ProjectBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/entity/Project$ProjectBuilderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/entity/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/entity/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/service/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/teaming/project/service/ProjectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/InviteServiceImpl.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ProjectController.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ProjectRepository.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ProjectService.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/dto/ProjectResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/dto/ProjectResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +188,7 @@
       <workItem from="1753532060385" duration="826000" />
       <workItem from="1753677734496" duration="9019000" />
       <workItem from="1753687445150" duration="595000" />
-      <workItem from="1753701418409" duration="2219000" />
+      <workItem from="1753701418409" duration="3008000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -339,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753687191422</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix: allow port 5174">
+      <option name="closed" value="true" />
+      <created>1753704840571</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1753704840571</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +405,8 @@
     <MESSAGE value="feat: findMemberByUsername, findProjectById" />
     <MESSAGE value="fix: remove @Data" />
     <MESSAGE value="feat: handle IllegalArgumentException" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: handle IllegalArgumentException" />
+    <MESSAGE value="fix: allow port 5174" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: allow port 5174" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

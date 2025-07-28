@@ -74,11 +74,9 @@ public class ProjectService {
     }
 
     public List<ProjectResponse> findAll() {
-        return projectRepository.findAll().stream().map(ProjectResponse::of).collect(Collectors.toList());
-    }
-
-    public List<String> getAllNames() {
-        return memberRepository.findAllNames();
+        return projectRepository.findAll().stream()
+                .map(ProjectResponse::of)
+                .collect(Collectors.toList());
     }
 
     public Project findProjectById(Integer id) {
