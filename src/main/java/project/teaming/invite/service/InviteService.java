@@ -12,6 +12,5 @@ public interface InviteService {
     void sendInvite(@AuthenticationPrincipal UserDetails userDetails, InviteRequestDto dto);
     void acceptInvite(UserDetails userDetails, AcceptInviteRequestDto dto);
     void refuseInvite(UserDetails userDetails, AcceptInviteRequestDto dto);
-    List<Invite> getAllInvites();
     List<Invite> getAllInvitesByUsername(UserDetails userDetails);
 }

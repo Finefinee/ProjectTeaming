@@ -109,11 +109,6 @@ public class InviteServiceImpl implements InviteService {
     }
 
     @Override
-    public List<Invite> getAllInvites() {
-        return inviteRepository.findAll();
-    }
-
-    @Override
     public List<Invite> getAllInvitesByUsername(UserDetails userDetails) {
         return inviteRepository.findAll().stream()
             .filter(invite -> invite.getProjectMember().getUsername().equals(userDetails.getUsername()))
