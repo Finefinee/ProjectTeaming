@@ -29,7 +29,7 @@ public class Project {
     @JoinTable(
             name = "project_members",
             joinColumns = @JoinColumn(name = "project_id"),
-            inverseJoinColumns = @JoinColumn(name = "member_id")
+            inverseJoinColumns = @JoinColumn(name = "member_username")
     )
     private List<Member> projectMember; // 배열
 }
