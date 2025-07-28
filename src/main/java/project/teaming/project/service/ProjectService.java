@@ -1,20 +1,20 @@
 package project.teaming.project.service;
 
-import project.teaming.member.entity.Member;
-import project.teaming.member.repository.MemberRepository;
-import project.teaming.project.entity.Project;
-import project.teaming.project.exception.ProjectNotFoundException;
-import project.teaming.project.repository.ProjectRepository;
-import project.teaming.project.dto.CreateProjectRequest;
-import project.teaming.project.dto.DeleteProjectRequest;
-import project.teaming.project.dto.UpdateProject;
-import project.teaming.project.dto.ProjectResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import project.teaming.member.entity.Member;
+import project.teaming.member.repository.MemberRepository;
+import project.teaming.project.dto.CreateProjectRequest;
+import project.teaming.project.dto.DeleteProjectRequest;
+import project.teaming.project.dto.ProjectResponse;
+import project.teaming.project.dto.UpdateProject;
+import project.teaming.project.entity.Project;
+import project.teaming.project.exception.ProjectNotFoundException;
+import project.teaming.project.repository.ProjectRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,9 +67,7 @@ public class ProjectService {
         Project project = projectRepository.findById(request.id())
                 .orElseThrow(() -> new IllegalArgumentException("프로젝트를 찾을 수 없습니다."));
 
-            project.setTitle(request.title());
-            project.setContent(request.content());
-            project.setProjectManager(request.projectManager());
+            project.update(request.title(), request.content(), request.projectManager());
 
             projectRepository.save(project);
             return ProjectResponse.of(project);

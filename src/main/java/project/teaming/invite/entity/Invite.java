@@ -1,9 +1,12 @@
 package project.teaming.invite.entity;
 
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import project.teaming.member.entity.Member;
 import project.teaming.project.entity.Project;
-import jakarta.persistence.*;
 
 @Entity
 @Getter
@@ -30,4 +33,8 @@ public class Invite {
 
     @Column(nullable = false)
     private boolean accepted = false;
+
+    public void accept() {
+        this.accepted = true;
+    }
 }

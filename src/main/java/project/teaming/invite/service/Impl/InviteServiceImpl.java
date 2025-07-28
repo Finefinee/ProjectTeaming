@@ -1,5 +1,9 @@
 package project.teaming.invite.service.Impl;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import project.teaming.invite.dto.AcceptInviteRequestDto;
 import project.teaming.invite.dto.InviteRequestDto;
 import project.teaming.invite.entity.Invite;
@@ -11,20 +15,13 @@ import project.teaming.invite.service.InviteService;
 import project.teaming.invite.utils.InviteGenerator;
 import project.teaming.invite.utils.InviteValidator;
 import project.teaming.member.entity.Member;
-import project.teaming.member.exception.MemberNotFoundException;
 import project.teaming.member.repository.MemberRepository;
 import project.teaming.member.service.MemberService;
 import project.teaming.project.entity.Project;
-import project.teaming.project.exception.ProjectNotFoundException;
 import project.teaming.project.repository.ProjectRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import project.teaming.project.service.ProjectService;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -69,7 +66,7 @@ public class InviteServiceImpl implements InviteService {
         inviteValidator.validateInvitee(invite, userDetails.getUsername());
 
         // 3. 초대 수락 처리
-        invite.setAccepted(true);
+        invite.accept();
 
         // 4. 프로젝트 팀원으로 등록 (중복 등록 방지)
         Project project = invite.getProject();
@@ -77,7 +74,8 @@ public class InviteServiceImpl implements InviteService {
         if (project.getProjectMember().contains(projectMember)) {
             throw new AlreadyProjectMemberException("이미 프로젝트의 멤버입니다.");
         }
-        project.getProjectMember().add(projectMember);
+
+        project.addMember(projectMember);
 
         // 5. 저장
         inviteRepository.save(invite);
