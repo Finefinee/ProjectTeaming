@@ -8,6 +8,8 @@ import project.teaming.invite.exception.InviteNotFoundException;
 import project.teaming.invite.exception.NotInviteOwnerException;
 import project.teaming.invite.repository.InviteRepository;
 import project.teaming.invite.service.InviteService;
+import project.teaming.invite.utils.InviteGenerator;
+import project.teaming.invite.utils.InviteValidator;
 import project.teaming.member.entity.Member;
 import project.teaming.member.exception.MemberNotFoundException;
 import project.teaming.member.repository.MemberRepository;
@@ -30,6 +32,8 @@ public class InviteServiceImpl implements InviteService {
     private final InviteRepository inviteRepository;
     private final MemberRepository memberRepository;
     private final ProjectRepository projectRepository;
+    private final InviteGenerator inviteGenerator;
+    private final InviteValidator inviteValidator;
 
     @Override
     @Transactional
