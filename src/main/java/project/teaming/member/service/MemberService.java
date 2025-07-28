@@ -24,6 +24,8 @@ public class MemberService {
 
     // 멤버 생성(비밀번호 암호화 포함)
     public ResponseEntity<?> signUp (SignUpRequest request) {
+
+        // 상황에 따른 예외 출력
         // 비밀번호 검증 먼저 수행
         String rawPassword = request.password();
         if (!isValidPassword(rawPassword)) {
@@ -36,6 +38,11 @@ public class MemberService {
         // 이메일 중복 체크
         if (memberRepository.existsByEmail(request.email())) {
             return ResponseEntity.badRequest().body(Map.of("email_error", "해당 이메일로 가입된 계정이 있습니다."));
+        }
+        // 학번 유효성 체크
+        String rawClassCode = request.classCode();
+        if (!isValidClassCode(rawClassCode)) {
+            return ResponseEntity.badRequest().body(Map.of("classCode_error", "잘못된 학번입니다."));
         }
         // 학번 중복 체크
         if (memberRepository.existsByClassCode(request.classCode())) {
@@ -83,17 +90,19 @@ public class MemberService {
 
     // 비밀번호 검증식
     private boolean isValidPassword(String password) {
-        if (password == null || password.length() < 8) return false;
-        boolean hasLetter = password.matches(".*[a-zA-Z].*");
-        boolean hasDigit = password.matches(".*\\d.*");
-        boolean hasSpecial = password.matches(".*[!@#$%^&*(),.?\":{}|<>].*");
+        if (password == null || password.length() < 8) { // 만약  비밀번호가 공백이거나 8자 미만인지
+            return false;
+        }
+        boolean hasLetter = password.matches(".*[a-zA-Z].*"); // 영어 대소문자중 하나라도 포함되어 있는지
+        boolean hasDigit = password.matches(".*\\d.*"); // 숫자가 하나라도 있는지
+        boolean hasSpecial = password.matches(".*[!@#$%^&*(),.?\":{}|<>].*"); // 특수문자가 하나라도 있는지
         return hasLetter && hasDigit && hasSpecial;
     }
 
     // 학번 검증식
-    private boolean isValidClass_code(String class_code) {
+    private boolean isValidClassCode(String classCode) {
         try {
-            int code = Integer.parseInt(class_code);
+            int code = Integer.parseInt(classCode);
 
             // 존재할 수 있는 최소 학번, 최대 학번
             if (code < 1101 || code > 3429) {
@@ -114,9 +123,8 @@ public class MemberService {
                 return false;
             }
 
-            /** 번호(최소 0, 최대 2)
-             * 01번 부터 최대 29번 까지
-             **/
+            //번호(최소 0, 최대 2)
+            // 01번 부터 최대 29번 까지
             if (ten > 2) {
                 return false;
             }
