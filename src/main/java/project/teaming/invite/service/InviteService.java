@@ -14,5 +14,5 @@ public interface InviteService {
     void acceptInvite(UserDetails userDetails, AcceptInviteRequestDto dto);
     void refuseInvite(UserDetails userDetails, AcceptInviteRequestDto dto);
     List<Invite> getAllInvitesByUsername(UserDetails userDetails);
-    Invite getInviteById(UserDetails userDetails, Long id);
+    Invite findInviteByIdOrElseThrow(Long id);
 }
