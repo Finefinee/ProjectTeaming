@@ -8,7 +8,6 @@ import project.teaming.project.entity.Project;
 @Component
 public class InviteGenerator {
     public Invite generateInvite(Member manager, Member invitee, Project project) {
-        Invite invite = new Invite(manager, invitee, project);
-        return invite;
+        return new Invite(manager, invitee, project);
     }
 }

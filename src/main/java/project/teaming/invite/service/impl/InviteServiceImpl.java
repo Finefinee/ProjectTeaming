@@ -1,4 +1,4 @@
-package project.teaming.invite.service.Impl;
+package project.teaming.invite.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

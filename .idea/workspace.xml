@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: readAlarm">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceBySubMajor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceByMajor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceByMainMajor.java" afterDir="false" />
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: service by major">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/controller/AlarmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/repository/MemberRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +43,8 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -112,7 +112,7 @@
     <option name="localRunNotPublishedPersistedInfo">
       <LocalReportPersistedInfo>
         <option name="path" value="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" />
-        <option name="reportGuid" value="78ca7daf-b8d4-4044-8fb5-2dad481deb39" />
+        <option name="reportGuid" value="f0502b73-08b6-4d55-9640-6d5f9fd9ed80" />
         <option name="reportName" value="Teaming/qodana/2025-07-29" />
       </LocalReportPersistedInfo>
     </option>
@@ -122,7 +122,7 @@
   </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="78ca7daf-b8d4-4044-8fb5-2dad481deb39" reportId="Teaming/qodana/2025-07-29" />
+      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="f0502b73-08b6-4d55-9640-6d5f9fd9ed80" reportId="Teaming/qodana/2025-07-29" />
     </option>
   </component>
   <component name="RecentsManager">
@@ -188,6 +188,7 @@
       <workItem from="1753701418409" duration="4783000" />
       <workItem from="1753750475382" duration="5758000" />
       <workItem from="1753756777521" duration="4022000" />
+      <workItem from="1753767546910" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -429,7 +430,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753767165065</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: service by major">
+      <option name="closed" value="true" />
+      <created>1753767717481</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1753767717481</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +459,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="?" />
     <MESSAGE value="acceptInvite -&gt; project.getProjectMember().add(invite.getProjectMember());" />
     <MESSAGE value="no env" />
     <MESSAGE value="code simplification" />
@@ -475,7 +483,8 @@
     <MESSAGE value="feat: alarm entity, repo, generator" />
     <MESSAGE value="feat: sendAlarm" />
     <MESSAGE value="feat: readAlarm" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: readAlarm" />
+    <MESSAGE value="feat: service by major" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: service by major" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

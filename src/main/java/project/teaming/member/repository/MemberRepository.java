@@ -14,8 +14,6 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     List<Member> findAllBySubMajor(Major mainMajor);
     List<Member> findAllByMainMajorAndSubMajor(Major mainMajor, Major subMajor);
 
-    Optional<Member> findById(int id);
-
     Optional<Member> findByUsername(String username);
 
     @Query("SELECT m.name FROM Member m")

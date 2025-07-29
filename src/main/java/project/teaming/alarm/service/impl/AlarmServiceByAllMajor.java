@@ -5,9 +5,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import project.teaming.alarm.dto.AlarmGenerateRequestDto;
 import project.teaming.alarm.entity.Alarm;
-import project.teaming.alarm.exception.AlarmNotFoundException;
 import project.teaming.alarm.repository.AlarmRepository;
 import project.teaming.alarm.service.AlarmService;
+import project.teaming.alarm.utils.AlarmFinder;
 import project.teaming.alarm.utils.AlarmGenerator;
 import project.teaming.alarm.utils.AlarmValidator;
 import project.teaming.member.entity.Major;
@@ -23,7 +23,8 @@ public class AlarmServiceByAllMajor implements AlarmService {
     private final MemberRepository memberRepository;
     private final AlarmRepository alarmRepository;
     private final AlarmGenerator alarmGenerator;
-    private final AlarmValidator  alarmValidator;
+    private final AlarmValidator alarmValidator;
+    private final AlarmFinder alarmFinder;
 
     @Override
     public void sendAlarm(Major major, Integer projectId) {
@@ -50,15 +51,9 @@ public class AlarmServiceByAllMajor implements AlarmService {
 
         alarmValidator.validateAlarmOwner(userDetails, alarmId);
 
-        Alarm alarm = findAlarmByIdOrElseThrow(alarmId);
+        Alarm alarm = alarmFinder.findAlarmByIdOrElseThrow(alarmId);
 
         alarm.markAsRead();
 
-    }
-
-    @Override
-    public Alarm findAlarmByIdOrElseThrow(Long id) {
-        return alarmRepository.findById(id)
-                .orElseThrow(() -> new AlarmNotFoundException("알림이 없습니다."));
     }
 }
