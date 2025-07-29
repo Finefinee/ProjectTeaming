@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import project.teaming.invite.exception.InviteNotFoundException;
-import project.teaming.invite.repository.InviteRepository;
 import project.teaming.member.entity.Member;
 import project.teaming.project.entity.Project;
 

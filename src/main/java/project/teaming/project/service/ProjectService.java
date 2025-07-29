@@ -80,7 +80,7 @@ public class ProjectService {
                 .collect(Collectors.toList());
     }
 
-    public Project findProjectById(Integer id) {
+    public Project findProjectByIdOrElseThrow(Integer id) {
         return projectRepository.findById(id)
                 .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"));
     }

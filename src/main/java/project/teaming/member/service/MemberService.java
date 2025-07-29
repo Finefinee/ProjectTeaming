@@ -102,7 +102,7 @@ public class MemberService {
         return grade <= 4 && grade >= 0;
     }
 
-    public Member findMemberByUsername(String username) {
+    public Member findMemberByUsernameOrElseThrow(String username) {
         return memberRepository.findByUsername(username)
                 .orElseThrow(() -> new MemberNotFoundException("사용자 없음"));
     }

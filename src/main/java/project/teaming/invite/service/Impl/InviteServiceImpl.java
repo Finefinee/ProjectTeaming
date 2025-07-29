@@ -8,7 +8,6 @@ import project.teaming.invite.dto.AcceptInviteRequestDto;
 import project.teaming.invite.dto.InviteRequestDto;
 import project.teaming.invite.entity.Invite;
 import project.teaming.invite.exception.InviteNotFoundException;
-import project.teaming.invite.exception.NotInviteOwnerException;
 import project.teaming.invite.repository.InviteRepository;
 import project.teaming.invite.service.InviteService;
 import project.teaming.invite.utils.InviteGenerator;
@@ -21,7 +20,6 @@ import project.teaming.project.repository.ProjectRepository;
 import project.teaming.project.service.ProjectService;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,10 +42,10 @@ public class InviteServiceImpl implements InviteService {
         Member projectManager = inviteValidator.validateInviter(userDetails.getUsername(), inviteRequestDto.projectId());
 
         // 2. 초대받을 멤버 조회
-        Member projectMember = memberService.findMemberByUsername(inviteRequestDto.projectMemberUsername());
+        Member projectMember = memberService.findMemberByUsernameOrElseThrow(inviteRequestDto.projectMemberUsername());
 
         // 3. 프로젝트 조회
-        Project project = projectService.findProjectById(inviteRequestDto.projectId());
+        Project project = projectService.findProjectByIdOrElseThrow(inviteRequestDto.projectId());
 
         // 4. 초대 객체 생성 및 저장
         Invite invite = inviteGenerator.create(projectManager, projectMember, project);
