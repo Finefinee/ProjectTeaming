@@ -13,6 +13,7 @@ import project.teaming.alarm.utils.AlarmValidator;
 import project.teaming.member.entity.Major;
 import project.teaming.member.entity.Member;
 import project.teaming.member.repository.MemberRepository;
+import project.teaming.member.service.MemberService;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class AlarmServiceByAllMajor implements AlarmService {
     private final AlarmGenerator alarmGenerator;
     private final AlarmValidator alarmValidator;
     private final AlarmFinder alarmFinder;
+    private final MemberService memberService;
 
     @Override
     public void sendAlarm(Major major, Integer projectId) {
@@ -53,7 +55,13 @@ public class AlarmServiceByAllMajor implements AlarmService {
 
         Alarm alarm = alarmFinder.findAlarmByIdOrElseThrow(alarmId);
 
-        alarm.markAsRead();
+        alarmRepository.delete(alarm);
+
+    }
+
+    @Override
+    public List<Alarm> findAllAlarm(UserDetails userDetails) {
+        return alarmRepository.findAllByMember(memberService.findMemberByUsernameOrElseThrow(userDetails.getUsername()));
 
     }
 }

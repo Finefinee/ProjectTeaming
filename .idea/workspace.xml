@@ -3,12 +3,20 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BeansEndpointTabSettings">
+    <option name="showLibraryBeans" value="false" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: service by major">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/controller/AlarmController.java" afterDir="false" />
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="fix: MemberRepository의 findById 삭제">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/controller/AlarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/controller/AlarmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/entity/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/entity/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/repository/AlarmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/repository/AlarmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/AlarmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/AlarmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceByAllMajor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceByAllMajor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceByMainMajor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceByMainMajor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceBySubMajor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceBySubMajor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/repository/MemberRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +77,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -188,7 +196,7 @@
       <workItem from="1753701418409" duration="4783000" />
       <workItem from="1753750475382" duration="5758000" />
       <workItem from="1753756777521" duration="4022000" />
-      <workItem from="1753767546910" duration="556000" />
+      <workItem from="1753767546910" duration="5114000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -438,7 +446,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753767717481</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fix: MemberRepository의 findById 삭제">
+      <option name="closed" value="true" />
+      <created>1753768821381</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1753768821381</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +475,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="acceptInvite -&gt; project.getProjectMember().add(invite.getProjectMember());" />
     <MESSAGE value="no env" />
     <MESSAGE value="code simplification" />
     <MESSAGE value="edit InviteController" />
@@ -484,7 +499,8 @@
     <MESSAGE value="feat: sendAlarm" />
     <MESSAGE value="feat: readAlarm" />
     <MESSAGE value="feat: service by major" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: service by major" />
+    <MESSAGE value="fix: MemberRepository의 findById 삭제" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: MemberRepository의 findById 삭제" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
