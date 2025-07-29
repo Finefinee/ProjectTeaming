@@ -1,15 +1,17 @@
 package project.teaming.member.service;
 
-import project.teaming.member.dto.CreateTokenRequest;
-import project.teaming.member.dto.LoginRequest;
-import project.teaming.member.dto.SignUpRequest;
-import project.teaming.member.jwt.JwtProvider;
-import project.teaming.member.entity.Member;
-import project.teaming.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import project.teaming.member.dto.CreateTokenRequest;
+import project.teaming.member.dto.LoginRequest;
+import project.teaming.member.dto.SignUpRequest;
+import project.teaming.member.entity.Major;
+import project.teaming.member.entity.Member;
+import project.teaming.member.exception.MemberNotFoundException;
+import project.teaming.member.jwt.JwtProvider;
+import project.teaming.member.repository.MemberRepository;
 
 import java.util.Map;
 
@@ -45,6 +47,12 @@ public class MemberService {
             return ResponseEntity.badRequest().body(Map.of("classCode_error", "잘못된 학년입니다."));
         }
 
+        Major subMajor1 = request.subMajor();
+        if (subMajor1 == null) {
+            subMajor1 = Major.NONE;
+        }
+
+
         // 검증 통과 후 회원가입 절차
         Member member = Member.builder()
                 .name(request.name())
@@ -52,6 +60,8 @@ public class MemberService {
                 .password(passwordEncoder.encode(rawPassword))
                 .email(request.email())
                 .grade(request.grade())
+                .mainMajor(request.mainMajor())
+                .subMajor(subMajor1)
                 .role("ROLE_USER") // 일단 일반 유저들 가입할 땐 무조건 USER로, 나중에 관리자 계정만들때는 ROLE_ADMIN으로 고쳐서 잠깐 하면 됨
                 .build();
         memberRepository.save(member);
@@ -99,5 +109,10 @@ public class MemberService {
     // 학년 유효성 검사
     private boolean isValidGrade(int grade) {
         return grade <= 4 && grade >= 0;
+    }
+
+    public Member findMemberByUsernameOrElseThrow(String username) {
+        return memberRepository.findByUsername(username)
+                .orElseThrow(() -> new MemberNotFoundException("사용자 없음"));
     }
 }

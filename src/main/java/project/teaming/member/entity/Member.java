@@ -1,12 +1,12 @@
 package project.teaming.member.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @Entity
-@Data
+@Getter
 @NoArgsConstructor
 @Table(name = "member")
 @SuperBuilder
@@ -29,4 +29,10 @@ public class Member {
     private int grade; // 학번
 
     private String role; //권한
+
+    @Enumerated(EnumType.STRING)
+    private Major mainMajor; // 주 전공
+
+    @Enumerated(EnumType.STRING)
+    private Major subMajor; // 부 전공
 }

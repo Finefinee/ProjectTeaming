@@ -1,12 +1,12 @@
 package project.teaming.member.jwt;
 
-import project.teaming.member.entity.Member;
-import project.teaming.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import project.teaming.member.entity.Member;
+import project.teaming.member.repository.MemberRepository;
 
 @Service
 @RequiredArgsConstructor

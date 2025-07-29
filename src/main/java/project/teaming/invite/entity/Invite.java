@@ -1,20 +1,21 @@
 package project.teaming.invite.entity;
 
-import project.teaming.member.entity.Member;
-import project.teaming.project.entity.Project;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import project.teaming.member.entity.Member;
+import project.teaming.project.entity.Project;
 
 @Entity
-@Data
+@Getter
 @Table(name = "Invites")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Invite {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -33,4 +34,15 @@ public class Invite {
 
     @Column(nullable = false)
     private boolean accepted = false;
+
+    public void accept() {
+        this.accepted = true;
+    }
+
+    public Invite(Member projectManager, Member projectMember, Project project) {
+        this.projectManager = projectManager;
+        this.projectMember = projectMember;
+        this.project = project;
+        this.accepted = false;
+    }
 }

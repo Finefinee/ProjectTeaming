@@ -1,19 +1,20 @@
 package project.teaming.project.service;
 
-import project.teaming.member.entity.Member;
-import project.teaming.member.repository.MemberRepository;
-import project.teaming.project.entity.Project;
-import project.teaming.project.repository.ProjectRepository;
-import project.teaming.project.dto.CreateProjectRequest;
-import project.teaming.project.dto.DeleteProjectRequest;
-import project.teaming.project.dto.UpdateProject;
-import project.teaming.project.dto.ProjectResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import project.teaming.member.entity.Member;
+import project.teaming.member.repository.MemberRepository;
+import project.teaming.project.dto.CreateProjectRequest;
+import project.teaming.project.dto.DeleteProjectRequest;
+import project.teaming.project.dto.ProjectResponse;
+import project.teaming.project.dto.UpdateProject;
+import project.teaming.project.entity.Project;
+import project.teaming.project.exception.ProjectNotFoundException;
+import project.teaming.project.repository.ProjectRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,38 +48,40 @@ public class ProjectService {
         projectRepository.save(project);
 
         return new ProjectResponse(
+              project.getId(),
               request.title(),
               request.content(),
-                member.getUsername(),
-                member.getUsername()
+              member.getUsername(),
+              member.getUsername()
         );
     }
     public ResponseEntity<?> deleteProject(DeleteProjectRequest request) {
         Project project = projectRepository.findById(request.id())
-                .orElseThrow(() -> new RuntimeException("프로젝트를 찾을 수 없습니다."));
+                .orElseThrow(() -> new ProjectNotFoundException("프로젝트를 찾을 수 없습니다."));
 
         projectRepository.delete(project);
         return ResponseEntity.ok(Map.of("message", "프로젝트가 삭제되었습니다."));
     }
 
-    public ProjectResponse  updateProject(UpdateProject request) {
+    public ProjectResponse updateProject(UpdateProject request) {
 //        Project e = projectRepository.findById(request.id()).orElse(null);
         Project project = projectRepository.findById(request.id())
                 .orElseThrow(() -> new IllegalArgumentException("프로젝트를 찾을 수 없습니다."));
 
-            project.setTitle(request.title());
-            project.setContent(request.content());
-            project.setProjectManager(request.projectManager());
+            project.update(request.title(), request.content(), request.projectManager());
 
             projectRepository.save(project);
             return ProjectResponse.of(project);
     }
 
     public List<ProjectResponse> findAll() {
-        return projectRepository.findAll().stream().map(ProjectResponse::of).collect(Collectors.toList());
+        return projectRepository.findAll().stream()
+                .map(ProjectResponse::of)
+                .collect(Collectors.toList());
     }
 
-    public List<String> getAllNames() {
-        return memberRepository.findAllNames();
+    public Project findProjectByIdOrElseThrow(Integer id) {
+        return projectRepository.findById(id)
+                .orElseThrow(() -> new ProjectNotFoundException("프로젝트 없음"));
     }
 }

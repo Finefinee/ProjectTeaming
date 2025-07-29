@@ -1,11 +1,11 @@
 package project.teaming.member.controller;
 
-import project.teaming.member.dto.LoginRequest;
-import project.teaming.member.dto.SignUpRequest;
-import project.teaming.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import project.teaming.member.dto.LoginRequest;
+import project.teaming.member.dto.SignUpRequest;
+import project.teaming.member.service.MemberService;
 
 @RestController
 @RequestMapping("/auth")
