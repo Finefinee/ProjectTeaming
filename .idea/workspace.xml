@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="chore: JwtAuthenticationFilter에 @NonNull 추가">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/repository/InviteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="fix: show member">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/repository/InviteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/repository/InviteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/InviteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/InviteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,15 +42,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="invite4" />
+        <entry key="$PROJECT_DIR$" value="improve" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,7 +68,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -90,6 +81,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.ProjectTeaming 빌드.executor": "Run",
+    "Gradle.ProjectTeaming#43 빌드.executor": "Run",
     "Gradle.ProjectTeaming-103commit 빌드.executor": "Run",
     "Gradle.ProjectTeaming-fixpackage 빌드.executor": "Run",
     "Gradle.ProjectTeaming-main-CRUDfixed 빌드.executor": "Run",
@@ -103,21 +95,21 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.TeamingApplication.executor": "Run",
     "Spring Boot.이름이 지정되지 않았습니다.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "codeimprove",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.postfix.templates",
+    "settings.editor.selected.configurable": "settings.qodana",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="QodanaReportsService">
     <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="0c4bc16e-9e81-4a0a-935a-1c82db07a4cc" reportId="Teaming/qodana/2025-07-23" />
-      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" reportGuid="fbe3e333-1035-40c3-9865-45751a756033" reportId="Teaming/qodana/2025-07-23" />
+      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" reportGuid="592cc09a-a130-47a7-8624-01a70043cb54" reportId="Teaming/qodana/2025-07-28" />
+      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="13238112-fe89-44b0-a66e-f465b71c2cf5" reportId="Teaming/qodana/2025-07-28" />
     </option>
   </component>
   <component name="RunManager">
@@ -173,6 +165,9 @@
       <workItem from="1753230240112" duration="7839000" />
       <workItem from="1753273974910" duration="512000" />
       <workItem from="1753532060385" duration="826000" />
+      <workItem from="1753677734496" duration="9019000" />
+      <workItem from="1753687445150" duration="595000" />
+      <workItem from="1753701418409" duration="4783000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -278,7 +273,95 @@
       <option name="project" value="LOCAL" />
       <updated>1753275034850</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="improve security">
+      <option name="closed" value="true" />
+      <created>1753678436319</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1753678436319</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: InviteGenerator, InviteValidator">
+      <option name="closed" value="true" />
+      <created>1753679913501</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1753679913501</updated>
+    </task>
+    <task id="LOCAL-00016" summary="refactor: clean code">
+      <option name="closed" value="true" />
+      <created>1753680525603</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1753680525603</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: findMemberByUsername, findProjectById">
+      <option name="closed" value="true" />
+      <created>1753682512790</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1753682512790</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix: remove @Data">
+      <option name="closed" value="true" />
+      <created>1753683681403</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1753683681403</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: remove @Data">
+      <option name="closed" value="true" />
+      <created>1753684304380</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1753684304380</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: handle IllegalArgumentException">
+      <option name="closed" value="true" />
+      <created>1753687156482</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1753687156482</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: handle IllegalArgumentException">
+      <option name="closed" value="true" />
+      <created>1753687191422</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1753687191422</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix: allow port 5174">
+      <option name="closed" value="true" />
+      <created>1753704840571</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1753704840571</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fix: show member">
+      <option name="closed" value="true" />
+      <created>1753705534104</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1753705534104</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix: show member">
+      <option name="closed" value="true" />
+      <created>1753706398782</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1753706398782</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +369,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="GlobalExceptionHandler -&gt; in Config package" />
@@ -300,6 +394,18 @@
     <MESSAGE value="chore: add builder" />
     <MESSAGE value="fix: lowercase package name" />
     <MESSAGE value="chore: JwtAuthenticationFilter에 @NonNull 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: JwtAuthenticationFilter에 @NonNull 추가" />
+    <MESSAGE value="improve security" />
+    <MESSAGE value="feat: InviteGenerator, InviteValidator" />
+    <MESSAGE value="refactor: clean code" />
+    <MESSAGE value="feat: findMemberByUsername, findProjectById" />
+    <MESSAGE value="fix: remove @Data" />
+    <MESSAGE value="feat: handle IllegalArgumentException" />
+    <MESSAGE value="fix: allow port 5174" />
+    <MESSAGE value="fix: show member" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: show member" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
