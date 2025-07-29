@@ -9,4 +9,5 @@ public enum Major {
     SECURITY,
     GAME,
     AI,
+    NONE
 }

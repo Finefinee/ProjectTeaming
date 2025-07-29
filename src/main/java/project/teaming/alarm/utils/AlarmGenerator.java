@@ -16,7 +16,6 @@ public class AlarmGenerator {
 
     public Alarm generateAlarm(AlarmGenerateRequestDto alarmGenerateRequestDto) {
         return Alarm.builder()
-                .isRead(false)
                 .member(memberService.findMemberByUsernameOrElseThrow(alarmGenerateRequestDto.username()))
                 .project(projectService.findProjectByIdOrElseThrow(alarmGenerateRequestDto.projectId()))
                 .build();
