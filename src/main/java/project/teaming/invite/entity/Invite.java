@@ -15,6 +15,7 @@ import project.teaming.project.entity.Project;
 @AllArgsConstructor
 @Builder
 public class Invite {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

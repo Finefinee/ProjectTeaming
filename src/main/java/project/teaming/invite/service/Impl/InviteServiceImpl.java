@@ -8,7 +8,6 @@ import project.teaming.invite.dto.AcceptInviteRequestDto;
 import project.teaming.invite.dto.InviteRequestDto;
 import project.teaming.invite.entity.Invite;
 import project.teaming.invite.exception.InviteNotFoundException;
-import project.teaming.invite.exception.NotInviteOwnerException;
 import project.teaming.invite.repository.InviteRepository;
 import project.teaming.invite.service.InviteService;
 import project.teaming.invite.utils.InviteGenerator;
@@ -21,7 +20,6 @@ import project.teaming.project.repository.ProjectRepository;
 import project.teaming.project.service.ProjectService;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,10 +42,10 @@ public class InviteServiceImpl implements InviteService {
         Member projectManager = inviteValidator.validateInviter(userDetails.getUsername(), inviteRequestDto.projectId());
 
         // 2. 초대받을 멤버 조회
-        Member projectMember = memberService.findMemberByUsername(inviteRequestDto.projectMemberUsername());
+        Member projectMember = memberService.findMemberByUsernameOrElseThrow(inviteRequestDto.projectMemberUsername());
 
         // 3. 프로젝트 조회
-        Project project = projectService.findProjectById(inviteRequestDto.projectId());
+        Project project = projectService.findProjectByIdOrElseThrow(inviteRequestDto.projectId());
 
         // 4. 초대 객체 생성 및 저장
         Invite invite = inviteGenerator.create(projectManager, projectMember, project);
@@ -59,8 +57,7 @@ public class InviteServiceImpl implements InviteService {
     @Transactional
     public void acceptInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
         // 1. 초대 정보 조회
-        Invite invite = inviteRepository.findById(dto.inviteId())
-                .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
+        Invite invite = findInviteByIdOrElseThrow(dto.inviteId());
 
         // 2. 초대 수락 자격 확인 (본인만 수락 가능)
         Member projectMember = inviteValidator.validateInvitee(invite, userDetails.getUsername());
@@ -81,14 +78,10 @@ public class InviteServiceImpl implements InviteService {
     @Override
     public void refuseInvite(UserDetails userDetails, AcceptInviteRequestDto dto) {
         // 1. 초대 정보 조회
-        Invite invite = inviteRepository.findById(dto.inviteId())
-                .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));
+        Invite invite = findInviteByIdOrElseThrow(dto.inviteId());
 
         // 2. 초대 수락 자격 확인 (본인만 수락 가능)
-        String username = userDetails.getUsername();
-        if (!invite.getProjectMember().getUsername().equals(username)) {
-            throw new NotInviteOwnerException("본인만 초대를 수락할 수 있습니다.");
-        }
+        inviteValidator.validateInvitee(invite, userDetails.getUsername());
 
         inviteRepository.delete(invite);
     }
@@ -101,7 +94,7 @@ public class InviteServiceImpl implements InviteService {
     }
 
     @Override
-    public Invite getInviteById(UserDetails userDetails, Long id) {
+    public Invite findInviteByIdOrElseThrow(Long id) {
 
         return inviteRepository.findById(id)
                 .orElseThrow(() -> new InviteNotFoundException("초대가 존재하지 않습니다."));

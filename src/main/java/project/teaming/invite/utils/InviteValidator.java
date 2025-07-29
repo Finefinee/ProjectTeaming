@@ -30,7 +30,7 @@ public class InviteValidator {
             throw new NotInviteOwnerException("프로젝트 팀장만 초대 가능");
         }
 
-        return memberService.findMemberByUsername(username);
+        return memberService.findMemberByUsernameOrElseThrow(username);
     }
 
     public Member validateInvitee(Invite invite, String username) {
@@ -44,6 +44,6 @@ public class InviteValidator {
             throw new AlreadyProjectMemberException("이미 프로젝트의 멤버입니다.");
         }
 
-        return memberService.findMemberByUsername(username);
+        return memberService.findMemberByUsernameOrElseThrow(username);
     }
 }
