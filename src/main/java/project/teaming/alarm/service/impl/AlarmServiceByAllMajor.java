@@ -18,7 +18,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class AlarmServiceByMajor implements AlarmService {
+public class AlarmServiceByAllMajor implements AlarmService {
 
     private final MemberRepository memberRepository;
     private final AlarmRepository alarmRepository;
@@ -27,7 +27,7 @@ public class AlarmServiceByMajor implements AlarmService {
 
     @Override
     public void sendAlarm(Major major, Integer projectId) {
-        List<Member> members = memberRepository.findAllByMainMajor(major.toString());
+        List<Member> members = memberRepository.findAllByMainMajorAndSubMajor(major, major);
 
         for (Member member : members) {
             // AlarmGenerateRequestDto 생성

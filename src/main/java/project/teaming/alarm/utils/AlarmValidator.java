@@ -8,7 +8,6 @@ import project.teaming.alarm.exception.NotAlarmOwnerException;
 import project.teaming.alarm.repository.AlarmRepository;
 import project.teaming.alarm.service.AlarmService;
 import project.teaming.member.entity.Member;
-import project.teaming.project.entity.Project;
 import project.teaming.project.service.ProjectService;
 
 @RequiredArgsConstructor

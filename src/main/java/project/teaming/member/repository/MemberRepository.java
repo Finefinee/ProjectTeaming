@@ -2,6 +2,7 @@ package project.teaming.member.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import project.teaming.member.entity.Major;
 import project.teaming.member.entity.Member;
 
 import java.util.List;
@@ -9,7 +10,9 @@ import java.util.Optional;
 
 public interface MemberRepository extends JpaRepository<Member, Integer> {
 
-    List<Member> findAllByMainMajor(String mainMajor);
+    List<Member> findAllByMainMajor(Major mainMajor);
+    List<Member> findAllBySubMajor(Major mainMajor);
+    List<Member> findAllByMainMajorAndSubMajor(Major mainMajor, Major subMajor);
 
     Optional<Member> findById(int id);
 
