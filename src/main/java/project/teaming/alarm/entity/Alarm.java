@@ -1,12 +1,18 @@
 package project.teaming.alarm.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import project.teaming.member.entity.Member;
 import project.teaming.project.entity.Project;
 
 @Getter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Alarm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

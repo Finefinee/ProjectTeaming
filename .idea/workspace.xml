@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="refactor: 메서드 이름 변경">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/dto/AlarmGenerateRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/dto/AlarmResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/entity/Alarm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/repository/AlarmRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/AlarmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/service/impl/AlarmServiceByMajor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Major.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/repository/MemberRepository.java" afterDir="false" />
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: alarm entity, repo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/entity/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/entity/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +50,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="per" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,7 +96,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.TeamingApplication.executor": "Run",
     "Spring Boot.이름이 지정되지 않았습니다.executor": "Run",
-    "git-widget-placeholder": "per",
+    "git-widget-placeholder": "alarm",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -177,7 +169,7 @@
       <workItem from="1753677734496" duration="9019000" />
       <workItem from="1753687445150" duration="595000" />
       <workItem from="1753701418409" duration="4783000" />
-      <workItem from="1753750475382" duration="5608000" />
+      <workItem from="1753750475382" duration="5758000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -387,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753751664027</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: alarm entity, repo">
+      <option name="closed" value="true" />
+      <created>1753756647506</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1753756647506</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +430,8 @@
     <MESSAGE value="fix: show member" />
     <MESSAGE value="fix: InviteService" />
     <MESSAGE value="refactor: 메서드 이름 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 메서드 이름 변경" />
+    <MESSAGE value="feat: alarm entity, repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: alarm entity, repo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
