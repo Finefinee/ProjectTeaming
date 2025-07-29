@@ -39,11 +39,6 @@ public class ProjectController {
         return ResponseEntity.ok(Map.of("message", "업데이트가 완료되었습니다."));
     }
 
-//    @GetMapping()
-//    public List<String> getAllNames() {
-//        return projectService.getAllNames();
-//    }
-
     @GetMapping
     public List<ProjectResponse> findAll() {
         return projectService.findAll();

@@ -1,4 +1,4 @@
-package project.teaming.invite.service.Impl;
+package project.teaming.invite.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -48,7 +48,7 @@ public class InviteServiceImpl implements InviteService {
         Project project = projectService.findProjectByIdOrElseThrow(inviteRequestDto.projectId());
 
         // 4. 초대 객체 생성 및 저장
-        Invite invite = inviteGenerator.create(projectManager, projectMember, project);
+        Invite invite = inviteGenerator.generateInvite(projectManager, projectMember, project);
 
         inviteRepository.save(invite);
     }

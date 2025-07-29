@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="fix: InviteService">
+    <list default="true" id="cff1441d-f544-4dfb-ac09-7324493da489" name="변경" comment="feat: service by major">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/controller/AlarmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/entity/Invite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/entity/Invite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/repository/InviteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/repository/InviteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/Impl/InviteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/InviteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/service/InviteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/invite/utils/InviteValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/member/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/member/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/project/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/teaming/alarm/utils/AlarmValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +40,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Exception" />
+        <option value="Enum" />
         <option value="Interface" />
+        <option value="Record" />
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -54,7 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="per" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,7 +69,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -82,40 +79,56 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.ProjectTeaming 빌드.executor": "Run",
-    "Gradle.ProjectTeaming#43 빌드.executor": "Run",
-    "Gradle.ProjectTeaming#47 빌드.executor": "Run",
-    "Gradle.ProjectTeaming-103commit 빌드.executor": "Run",
-    "Gradle.ProjectTeaming-fixpackage 빌드.executor": "Run",
-    "Gradle.ProjectTeaming-main-CRUDfixed 빌드.executor": "Run",
-    "Gradle.ProjectTeaming-merge#24 빌드.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.TeamingApplication.executor": "Run",
-    "Spring Boot.이름이 지정되지 않았습니다.executor": "Run",
-    "git-widget-placeholder": "per",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.qodana",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.ProjectTeaming 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProjectTeaming#43 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProjectTeaming#47 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProjectTeaming-103commit 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProjectTeaming-fixpackage 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProjectTeaming-main-CRUDfixed 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProjectTeaming-merge#24 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.TeamingApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.이름이 지정되지 않았습니다.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;alarm&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="f0502b73-08b6-4d55-9640-6d5f9fd9ed80" />
+        <option name="reportName" value="Teaming/qodana/2025-07-29" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output1/qodana.sarif.json" reportGuid="592cc09a-a130-47a7-8624-01a70043cb54" reportId="Teaming/qodana/2025-07-28" />
-      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="13238112-fe89-44b0-a66e-f465b71c2cf5" reportId="Teaming/qodana/2025-07-28" />
+      <ReportDescription localRun="true" path="/private/var/folders/w7/015bhf0s4739065zg915yt6w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="f0502b73-08b6-4d55-9640-6d5f9fd9ed80" reportId="Teaming/qodana/2025-07-29" />
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="project.teaming.alarm.service.impl" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="TeamingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -173,7 +186,9 @@
       <workItem from="1753677734496" duration="9019000" />
       <workItem from="1753687445150" duration="595000" />
       <workItem from="1753701418409" duration="4783000" />
-      <workItem from="1753750475382" duration="1108000" />
+      <workItem from="1753750475382" duration="5758000" />
+      <workItem from="1753756777521" duration="4022000" />
+      <workItem from="1753767546910" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="?">
       <option name="closed" value="true" />
@@ -375,7 +390,55 @@
       <option name="project" value="LOCAL" />
       <updated>1753751002252</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="refactor: 메서드 이름 변경">
+      <option name="closed" value="true" />
+      <created>1753751664027</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1753751664027</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: alarm entity, repo">
+      <option name="closed" value="true" />
+      <created>1753756647506</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1753756647506</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: alarm entity, repo, generator">
+      <option name="closed" value="true" />
+      <created>1753757003548</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1753757003548</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: sendAlarm">
+      <option name="closed" value="true" />
+      <created>1753757363651</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1753757363651</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: readAlarm">
+      <option name="closed" value="true" />
+      <created>1753767165065</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1753767165065</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: service by major">
+      <option name="closed" value="true" />
+      <created>1753767717481</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1753767717481</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,8 +459,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="GlobalExceptionHandler -&gt; in Config package" />
-    <MESSAGE value="?" />
     <MESSAGE value="acceptInvite -&gt; project.getProjectMember().add(invite.getProjectMember());" />
     <MESSAGE value="no env" />
     <MESSAGE value="code simplification" />
@@ -417,7 +478,13 @@
     <MESSAGE value="fix: allow port 5174" />
     <MESSAGE value="fix: show member" />
     <MESSAGE value="fix: InviteService" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: InviteService" />
+    <MESSAGE value="refactor: 메서드 이름 변경" />
+    <MESSAGE value="feat: alarm entity, repo" />
+    <MESSAGE value="feat: alarm entity, repo, generator" />
+    <MESSAGE value="feat: sendAlarm" />
+    <MESSAGE value="feat: readAlarm" />
+    <MESSAGE value="feat: service by major" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: service by major" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
