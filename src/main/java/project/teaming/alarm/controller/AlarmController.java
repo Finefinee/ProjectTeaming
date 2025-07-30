@@ -29,9 +29,24 @@ public class AlarmController {
         return ResponseEntity.ok(alarmService.findAllAlarm(userDetails));
     }
 
-    // 알림 보내가
+    // 알림 보내기는 다른 곳에서
 
     // 알림 읽음
+    @DeleteMapping("/{alarmId}")
+    ResponseEntity<Void> readAlarm(
+            @AuthenticationPrincipal UserDetails userDetails,
+            @PathVariable Long alarmId) {
+        alarmService.readAlarm(userDetails, alarmId);
+        return ResponseEntity.noContent().build();
+    }
 
     // 알림 전체 읽음
+    @DeleteMapping
+    ResponseEntity<Void> readAllAlarm(@AuthenticationPrincipal UserDetails userDetails) {
+        List<Alarm> alarms = alarmService.findAllAlarm(userDetails);
+        for (Alarm alarm : alarms) {
+            alarmService.readAlarm(userDetails, alarm.getId());
+        }
+        return ResponseEntity.noContent().build();
+    }
 }
