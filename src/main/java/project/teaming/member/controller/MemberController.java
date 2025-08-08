@@ -25,6 +25,8 @@ public class MemberController {
         return memberService.login(request);
     }
 
+
+
 //    @GetMapping("/{id}")
 //    public MemberResponse findMemberById(@PathVariable int id) {
 //        return memberService.findMemberById(id);

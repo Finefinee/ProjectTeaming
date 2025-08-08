@@ -38,7 +38,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Token쓰기위해 Session끔
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/auth/**").permitAll()
+                        .requestMatchers("/", "/auth/**","/email/**").permitAll()
                         .requestMatchers("/project/getProject").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
