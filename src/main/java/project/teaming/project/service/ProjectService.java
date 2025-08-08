@@ -82,6 +82,25 @@ public class ProjectService {
         return ProjectResponse.of(project);
     }
 
+    public ProjectResponse kickProject(UpdateProject request) {
+        Project project = projectRepository.findById(request.id())
+                .orElseThrow(() -> new IllegalArgumentException("프로젝트를 찾을 수 없습니다."));
+        verifyProjectManager(project);
+
+//        project.setProjectMember(request.projectMember(null)); <----내가 쓴 코드
+        project.getProjectMember().removeIf(member -> member.getId().equals(request.projectMember())); // <--- GPT가 쓴 코드
+        return ProjectResponse.of(project);
+    }
+
+    public ProjectResponse quitProject(UpdateProject request) {
+        Project project = projectRepository.findById(request.id())
+                .orElseThrow(() -> new IllegalArgumentException("프로젝트를 찾을 수 없습니다."));
+
+//        project.setProjectMember(null); <---- 내가 쓴 코드
+        project.getProjectMember().removeIf(member -> member.getId().equals(request.projectMember())); // <---GPT가 쓴 코드
+        return ProjectResponse.of(project);
+    }
+
     public List<ProjectResponse> findAll() {
         return projectRepository.findAll().stream().map(ProjectResponse::of).collect(Collectors.toList());
     }

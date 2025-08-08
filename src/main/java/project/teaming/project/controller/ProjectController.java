@@ -39,6 +39,17 @@ public class ProjectController {
         return ResponseEntity.ok(Map.of("message", "업데이트가 완료되었습니다."));
     }
 
+    @PatchMapping()
+    public ResponseEntity<?> kickProject(@RequestBody UpdateProject request) {
+        projectService.kickProject(request);
+        return ResponseEntity.ok(Map.of("message","성공적으로 탈퇴되셨습니다"));
+    }
+    @PatchMapping()
+    public ResponseEntity<?> quitProject(@RequestBody UpdateProject request) {
+        projectService.quitProject(request);
+        return ResponseEntity.ok(Map.of("message","성공적으로 탈퇴되셨습니다"));
+    }
+
     @GetMapping("/getProject")
     public List<ProjectResponse> findAll() {
         return projectService.findAll();
