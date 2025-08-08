@@ -16,6 +16,18 @@ spring:
       hibernate:
         format_sql: true
 
+  mail:
+    host: smtp.gmail.com
+    username: TeamingProject0@gmail.com
+    password: qyotkeendleyezea
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
 server:
   port: 8080
 
