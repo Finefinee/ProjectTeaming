@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 
 /** 이메일 보내는거와 관련있음 **/
@@ -17,15 +16,6 @@ public class BaseResponse<T> {
 	private String message;
 	private T data;
 	private int status;
-
-	public static <T> BaseResponse<T> ok(T data) {
-		return BaseResponse.<T>builder()
-				.success(true)
-				.message("요청 성공")
-				.data(data)
-				.status(HttpStatus.OK.value())
-				.build();
-	}
 
 	// 성공 응답
 	public static BaseResponse<Void> ok(String message) {

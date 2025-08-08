@@ -24,26 +24,4 @@ public class MemberController {
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         return memberService.login(request);
     }
-
-
-
-//    @GetMapping("/{id}")
-//    public MemberResponse findMemberById(@PathVariable int id) {
-//        return memberService.findMemberById(id);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public void deleteMemberById(@PathVariable int id) {
-//        memberService.deleteMemberById(id);
-//    }
-//
-//    @PatchMapping()
-//    public MemberResponse updateMember (@RequestBody UpdateMember request) {
-//        return memberService.updateMember(request);
-//    }
-//
-//    @GetMapping()
-//    public List<MemberResponse> findAll() {
-//        return memberService.findAll();
-//    }
 }

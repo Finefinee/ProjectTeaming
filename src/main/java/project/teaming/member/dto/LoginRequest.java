@@ -1,6 +1,6 @@
 package project.teaming.member.dto;
 
-public record   LoginRequest(
+public record LoginRequest(
         String username,
         String password
 ) {
