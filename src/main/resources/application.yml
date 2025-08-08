@@ -18,8 +18,8 @@ spring:
 
   mail:
     host: smtp.gmail.com
-    username: TeamingProject0@gmail.com
-    password: qyotkeendleyezea
+    username: 
+    password: 
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
