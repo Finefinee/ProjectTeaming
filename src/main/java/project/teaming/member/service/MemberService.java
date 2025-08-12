@@ -59,7 +59,7 @@ public class MemberService {
         }
         // 이메일 중복 체크
         if (memberRepository.existsByEmail(request.email())) {
-            return ResponseEntity.badRequest().body(Map.of("email_error", "해당 이메일로 가입된 계정이 있습니다."));
+            return ResponseEntity.badRequest().body(Map.of("email_error", "해당 이메일로 이미 가입된 계정이 있습니다."));
         }
         // 학년 유효성 체크
         int rawGrade = request.grade();
@@ -74,7 +74,7 @@ public class MemberService {
         }
 
 
-        // 검증 통과 후 회원가입 절차
+        // 검증 통과 후 회원가입
         Member member = Member.builder()
                 .name(request.name())
                 .username(request.username())
@@ -83,7 +83,7 @@ public class MemberService {
                 .grade(request.grade())
                 .mainMajor(request.mainMajor())
                 .subMajor(subMajor1)
-                .role("ROLE_USER") // 일단 일반 유저들 가입할 땐 무조건 USER로, 나중에 관리자 계정만들때는 ROLE_ADMIN으로 고쳐서 잠깐 하면 됨
+                .role("ROLE_USER") // 일단 일반 유저들 가입할 땐 무조건 USER로, 나중에 관리자 계정만들때는 ROLE_ADMIN으로 고쳐서 하면 됨
                 .build();
         memberRepository.save(member);
 
@@ -148,11 +148,31 @@ public class MemberService {
     public void sendEmail(String email) {
         makeRandomNum();
         String title = "Teaming 회원가입용 본인인증 코드 입니다.";
-        String content = "이 메일은 수신용이며 회신하지 마십시오." +
-                "<br><br>" +
-                "인증번호는 " + authNumber + " 입니다." +
-                "<br>" +
-                "타인에게 해당 인증번호를 노출하지 마십시오.";
+        String content = """
+        <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: auto; padding: 20px; background-color: #ffffff;">
+            <h2 style="font-weight: 700; font-size: 20px; margin-bottom: 4px;">
+                프로젝트를 <span style="color: #3E80F4;">더</span> 쉽게, 협업을 <span style="color: #3E80F4;">더</span> 쉽게!!
+            </h2>
+            <p style="font-weight: 700; margin-top: 0; font-size: 16px;">
+                저희 <span style="color: #3E80F4;">Teaming</span> 서비스를 이용해 주셔서 감사합니다.
+            </p>
+
+            <p style="font-weight: 700; font-size: 16px; margin-top: 24px;">
+                아래 인증코드를 회원가입 란에 정확히 입력해주세요.
+            </p>
+            <p style="color: #555; font-size: 12px; margin-top: 4px;">
+                코드는 5분동안 유효합니다.
+            </p>
+
+            <div style="margin-top: 24px; text-align: center;">
+                <div style="display: inline-block; background-color: #3E80F4; padding: 16px 40px; border-radius: 50px;">
+                    <span style="color: #ffffff; font-size: 28px; font-weight: bold; letter-spacing: 2px;">
+                        %s
+                    </span>
+                </div>
+            </div>
+        </div>
+        """.formatted(authNumber);
 
         MimeMessage message = mailSender.createMimeMessage();
         try {

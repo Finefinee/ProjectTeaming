@@ -11,14 +11,13 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class BaseResponse<T> {
+public class BaseResponse {
 	private boolean success;
 	private String message;
-	private T data;
 	private int status;
 
 	// 성공 응답
-	public static BaseResponse<Void> ok(String message) {
+	public static BaseResponse ok(String message) {
 		return BaseResponse.<Void>builder()
 				.success(true)
 				.message(message)
@@ -27,7 +26,7 @@ public class BaseResponse<T> {
 	}
 
 	// 실패 응답
-	public static <T> BaseResponse<T> of(HttpStatus status, String message) {
+	public static <T> BaseResponse of(HttpStatus status, String message) {
 		return BaseResponse.<T>builder()
 				.success(false)
 				.message(message)

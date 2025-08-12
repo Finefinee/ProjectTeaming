@@ -12,7 +12,7 @@ import project.teaming.member.dto.EmailCheckRequest;
 import project.teaming.member.dto.EmailSendRequest;
 import project.teaming.member.service.MemberService;
 
-
+/** 이메일 전송 및 인증 용 RestAPI **/
 @RestController
 @RequestMapping("/email")
 @RequiredArgsConstructor
